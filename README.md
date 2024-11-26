@@ -39,5 +39,11 @@ Tooltips with additional explanations for each area.
 
 This project will demonstrate my ability to integrate technical knowledge with design principles to create an accessible and responsive web application.
 
-#WireFrame
+# WireFrame
+When designing the website, my focus was on creating an intuitive experience. I want the users to immediately understand the purpose of the page, even if they arrived via a quick Google search. The wireframe was crafted with a mobile-first approach, ensuring a seamless user experience across devices. The webpage will carry the same header and logo and theme of the first project to ensure it is a seemly transition to the court.html page.
+
+<img src="assets/images/wireframe_mobile.jpg" alt="wireframe mobile/laptop view">
+<img src="assets/images/wireframe_2pg.jpg" alt="idea 1">
+<img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
+
 
