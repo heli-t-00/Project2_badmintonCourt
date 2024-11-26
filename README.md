@@ -1,6 +1,6 @@
 # Project 2 Badminton Court
 
-## Introduction 
+# Introduction 
 
 For my second project in the tech bootcamp, I will build upon my first project, [Project 1] (https://heli-t-00.github.io/Project1_NPBadminton/), by creating an interactive badminton court using a front-end web application developed with HTML, CSS, and JavaScript. 
 This project aligns with the EPIC (Easily-Accessible, Purposeful, Interactive, and Consistent) approach and aims to deliver an engaging and user-friendly experience.
@@ -24,18 +24,19 @@ This project satisfies the following objectives:
 - LO5: Document the development process using version control tools like GitHub.
 - LO6: Implement front-end interactivity using core JavaScript and advanced features (e.g., tooltips and animations).
 
-#Proposed Features
-Building on the existing (website) [] (link to Project 1), I will introduce the following:
+# Proposed Features
+Building on the existing [Project 1] (https://heli-t-00.github.io/Project1_NPBadminton/), I will introduce the following:
 
-Interactive Badminton Court: Users can click areas of interest on the court to learn the rules.
-User Story - Single Court Player:
+## Interactive Badminton Court: Users can click areas of interest on the court to learn the rules.
+### User Story - Single Court Player:
 - Identify valid play areas for single player games.
 - Identify service areas for singles.
-User Story - Double Court Players:
+### User Story - Double Court Players:
 - Identify valid play areas for double players games.
 - Identify service areas for double players.
-See an animation illustrating service zones.
-Tooltips with additional explanations for each area.
+
+* Use animation, to illustrate service zones.
+* Tooltips with additional explanations for each area.
 
 This project will demonstrate my ability to integrate technical knowledge with design principles to create an accessible and responsive web application.
 
