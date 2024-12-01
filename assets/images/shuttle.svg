@@ -1,0 +1,6 @@
+    <svg x="10" y="10" width="54" height="54" id="shuttle" onMouseDown="rotateOnClick(event,this)">
+        <g fill="#fff" stroke="#000" stroke-width="4">
+            <ellipse cx="41.3" cy="43.1" rx="7.1" ry="7.3" />
+            <path d="m31.4 2.2 13.9 35.0-10.7 8.4-31.3-21.0z" />
+        </g>
+    </svg>

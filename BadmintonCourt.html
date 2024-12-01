@@ -1,0 +1,256 @@
+<HTML>
+
+<body>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: black;
+        }
+
+        .button>p {
+            background-color: grey;
+        }
+
+        .court {
+            display: grid;
+            grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
+            grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
+            width: 100%;
+            height: 100%;
+            scale: 70%;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .court>div.area {
+            transition: all 1s;
+            cursor: grab;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .court>div.line {
+            background-color: white;
+        }
+
+        .court>div:hover {
+            background: blue;
+        }
+/*
+        @keyframes shuttle {
+            0% {
+                top: 0;
+                left: 0;
+            }
+
+            100% {
+                top: 680;
+                left: 310;
+            }
+        }
+
+        @keyframes shuttle-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(350deg);
+            }
+        }
+
+        #shuttle {
+            animation-name: shuttle;
+            animation-duration: 1s;
+        }
+
+        #shuttle:hover {
+            transform: rotate(360deg);
+        }
+*/
+        svg {
+            /* animation-name: shuttle;
+            animation-duration: 1s; */
+            position: absolute;
+            top: 10;
+            left: 10;
+            scale: 30%;
+            /* transition: transform 0.5s ease-in-out; */
+        }
+        /* svg:hover {
+            transform: rotate(360deg);
+        }  */
+    </style>
+    <script>
+        function delay(time) {
+            return new Promise(resolve => setTimeout(resolve, time));
+        }
+        function moveShuttle(item,xpos,ypos,degree,size) {
+            item.style.top=ypos;
+            item.style.left=xpos;
+            item.style.scale=`${size}%`;
+            item.style.transform = `rotate(${degree}deg)`;
+        }
+        function serve() {
+            let fromArea = document.getElementById('TML1');
+            let toArea = document.getElementById('BMR1');
+            let shuttle = document.getElementsByClassName('shuttle')[0];
+            if (fromArea && toArea && shuttle) {
+                let fromRect = fromArea.getBoundingClientRect();
+                let toRect = toArea.getBoundingClientRect();
+                let pX = fromRect.left + fromRect.width / 2;
+                let pY = fromRect.top + fromRect.height / 2;
+                moveShuttle(shuttle,pX,pY,0,30);
+                pX = toRect.left + toRect.width / 2;
+                pY = toRect.top + toRect.height / 2;
+                delay(1000).then(() => moveShuttle(shuttle,pX,pY,180,70));
+                shuttle.style.transitionProperty = "all";
+                shuttle.style.transitionDuration = "1s";
+            }
+        }
+        function moveOnClick(event,el) {
+            let shuttle = document.getElementsByClassName('shuttle')[0];
+            if (el && shuttle) {
+                let bcr = el.getBoundingClientRect();
+                let ibcr = shuttle.getBoundingClientRect();
+                moveShuttle(shuttle,event.clientX-25,event.clientY-25,0,30);
+                shuttle.style.transitionProperty = "all";
+                shuttle.style.transitionDuration = "1s";
+            }
+        }
+    </script>
+    <button id="found" onclick="serve()">Serve</button>
+    <div class="court">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="TRL2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TRL1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TRR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TRR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="TML2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TML1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TMR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TMR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="TFL2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TFL1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TFR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="TFR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="BFL2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BFL1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BFR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BFR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="BML2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BML1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BMR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BMR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="area" id="BRL2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BRL1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BRR1" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="area" id="BRR2" onClick="moveOnClick(event,this)"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <svg width="54" height="54" class="shuttle">
+        <g fill="#fff" stroke="#000" stroke-width="4">
+            <ellipse cx="41.3" cy="43.1" rx="7.1" ry="7.3" />
+            <path d="m31.4 2.2 13.9 35.0-10.7 8.4-31.3-21.0z" />
+        </g>
+    </svg>
+</body>
+
+</HTML>

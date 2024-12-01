@@ -3,7 +3,7 @@
 # Introduction 
 
 For my second project in the tech bootcamp, I will build upon my first project, [Project 1] (https://heli-t-00.github.io/Project1_NPBadminton/), by creating an interactive badminton court using a front-end web application developed with HTML, CSS, and JavaScript. 
-This project aligns with the EPIC (Easily-Accessible, Purposeful, Interactive, and Consistent) approach and aims to deliver an engaging and user-friendly experience.
+This project aligns with the EPIC (Easily-Accessible, Purposeful, Interactive, and Consistent) approach and aims to deliver an engaging and user-friendly experience for those who are new to badminton and want to know the badminton basics.
 
 The primary goal is to display the rules of the game interactively, focusing on accessibility and responsivity. The application will ensure compatibility across devices by designing with a mobile-first approach. Leveraging CSS, I will implement CSS grids to construct the badminton court, ensuring scalability for various screen sizes.
 
@@ -11,11 +11,11 @@ The primary goal is to display the rules of the game interactively, focusing on 
 The interactive badminton court will allow users to:
 
 - Identify specific areas of the court such as play zones or service areas.
-- Learn key rules visually, such as which areas are valid for singles play.
+- Learn key rules visually, such as which areas are valid for singles play or doubles play.
 - Experience animations that demonstrate court usage (e.g., valid service areas).
 - Interact with tooltips providing additional information about court regions.
 
-This project satisfies the following objectives:
+This project intends to satisfy the following objectives:
 
 - LO1: Design an interactive front-end web application based on UX design principles, accessibility, and responsivity.
 - LO2: Test the application thoroughly during development, implementation, and deployment phases.
