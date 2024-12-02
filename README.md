@@ -1,4 +1,4 @@
-# Project 2 Badminton Court
+# Project 2 Badminton Basics
 
 # Introduction 
 
@@ -48,3 +48,4 @@ When designing the website, my focus was on creating an intuitive experience. I 
 <img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
 
 
+### Credits

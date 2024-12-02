@@ -1,0 +1,31 @@
+body {
+    justify-content: center;
+width: 100vw;
+align-items: center;
+background-color: black;
+    color: white;
+}
+.court { 
+    display:grid;
+    grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
+    grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px ;
+    zoom: 70%;
+    /* rotate: -90deg; */
+    transform-origin: 0 0;
+}
+.line {
+    
+    border-style: solid; 
+    
+    background-color: white;
+    border-width:1px
+}
+.area {
+    background-color: green;
+}
+.net {
+    background-color: red;
+    border-color: red;
+
+
+    }
