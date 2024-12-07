@@ -1,146 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Badminton Basics</title>
-    <link rel="stylesheet" href="assets/css/court.css">
+    <link rel="stylesheet" href="assets/css/court.css" />
     <script src="assets\javascript\court.js"></script>
-<body>
- 
-<div class="court">
-    <!-- First Row - court line -->
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-<!-- second row - court area-->
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area" id="test" onClick="clickOnArea(event, this)">D</div>
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-<!-- third row - line -->
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line">C</div>
-    <div class="line">D</div>
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line">C</div>
-    <div class="line">D</div>
-    <div class="line">D</div>
-<!-- fourth row - court area -->
-<div class="line"></div>
-<div class="area">B</div>
-<div class="line"></div>
-<div class="area">D</div>
-<div class="line"></div>
-<div class="area">B</div>
-<div class="line"></div>
-<div class="area">D</div>
-<div class="line"></div>
-<!-- fifth row - line -->
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line"></div>
-    <div class="line">D</div>
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line">C</div>
-    <div class="line">D</div>
-    <div class="line">D</div>
-<!-- 6th row - court area -->
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-<!-- 7th row - line -->
-    <div class="net">A</div>
-    <div class="net"></div>
-    <div class="net">C</div>
-    <div class="net">D</div>
-    <div class="net">A</div>
-    <div class="net">B</div>
-    <div class="net">C</div>
-    <div class="net">D</div>
-    <div class="net">D</div>
-<!-- 8th row - court area -->
-    <div class="line"></div>
-    <div class="area" title="an area of the court">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-<!-- 9th row - line -->
-    <div class="line">D</div>
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line">C</div>
-    <div class="line">D</div>
-    <div class="line">A</div>
-    <div class="line">B</div>
-    <div class="line">C</div>
-    <div class="line">D</div>
-<!-- 10th row - court area -->
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-<!-- 11th row - line -->
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-<!-- 12th row - court area -->
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-    <div class="area">B</div>
-    <div class="line"></div>
-    <div class="area">D</div>
-    <div class="line"></div>
-<!-- 13th row - line -->
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-    <div class="line">x</div>
-</div>
+  </head>
+  <body>
+    <div>
+      <!-- buttons showing valid court areas -->
+      <button onClick="showSinglesCourt()">Singles Court</button>
+      <button onClick="showDoublesCourt()">Doubles Court</button>
+    </div>
+    <br />
+    <div class="court">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <!-- second row 
+       add id to Areas to identify each one 
+      4 character ID ie. TFL1 denotes Top Front Left 1 
+      0: T (top) B (bottom) - identifies which side of the net
+      1: F (front) M (middle) R (rear) location from NET
+      2: L (left) R (right) - sides of the court
+      3: 1 or 2 distance from the middle / centre -->
+      <div class="line"></div>
+      <div class="area" id="TRL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
 
-<div></div>
-</body>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="area" id="TML2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TML1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TMR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TMR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="area" id="TFL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="area" id="BFL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      
+      <div class="line"></div>
+      <div class="area" id="BML2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BML1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BMR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BMR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="area" id="BRL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </body>
 </html>
