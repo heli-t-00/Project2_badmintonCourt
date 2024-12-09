@@ -1,4 +1,4 @@
-console.log("x");
+
 // Click to change color of areas on court function
 // added if/else conditional selection of area to change color using ID
 // eg. ALL singles court area has 1 in ID

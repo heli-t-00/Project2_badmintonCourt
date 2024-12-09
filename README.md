@@ -49,3 +49,5 @@ When designing the website, my focus was on creating an intuitive experience. I 
 
 
 ### Credits
+Shuttle shape button - https://travishorn.com/buttons-with-custom-shapes-cabdcde7dfd1
+jQuery Library, open source - https://jquery.com/download/ 
