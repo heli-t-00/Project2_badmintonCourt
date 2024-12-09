@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Badminton Basics</title>
     <link rel="stylesheet" href="assets/css/court.css" />
-    <script src="assets\javascript\jquery-library.js"></script>
+    
     <script src="assets\javascript\court.js"></script>
   </head>
   <body>
@@ -13,14 +13,16 @@
       Welcome 
       intro
       How to play
+      <button onclick="fn1 ()" id="btn1">Let's Start</button>
     </div>
+    <br>
     <div>
       <!-- buttons showing valid court areas -->
       <button onClick="showSinglesCourt()">Singles Court</button>
       <button onClick="showDoublesCourt()">Doubles Court</button>
     </div>
     <br />
-    <div class="court">
+    <div id="court">
       <!-- 1st row - line -->
       <div class="line"></div>
       <div class="line"></div>
@@ -159,5 +161,12 @@
       <div class="line"></div>
 
     </div>
+    <svg width="30" height="30" viewport(0,0,,30) id="shuttle" onMouseDown="rotateOnClick(event,this)">
+        <g fill="#fff" stroke="#000" stroke-width="4">
+            <circle cx="14" cy="14" r="14" />
+           
+        </g>
+    </svg>
   </body>
+  <script src="assets\javascript\jquery-library.js"></script>
 </html>

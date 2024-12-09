@@ -49,5 +49,15 @@ When designing the website, my focus was on creating an intuitive experience. I 
 
 
 ### Credits
+Basic badminton information selected from  - 
+Badminton players and playing area: Playing area https://www.bbc.co.uk/bitesize/guides/z37j2p3/revision/2 
+Badminton court size & Layout guide: https://www.networldsports.co.uk/buyers-guides/badminton-court-guide 
+The badminton bible https://www.badmintonbible.com/rules/simple 
+Badminton Racket Review https://badminton-racket-review.com/blogs/news/the-basic-rules-of-badminton-a-complete-guide?srsltid=AfmBOoo5r_TSvwWOotnKWtKx1qUooksrATSlBHoDRASuwph3uQUF1xMg 
+CSS Grid Layout Module https://www.w3schools.com/css/css_grid.asp 
+
+
 Shuttle shape button - https://travishorn.com/buttons-with-custom-shapes-cabdcde7dfd1
-jQuery Library, open source - https://jquery.com/download/ 
+Shuttle sizing guide / measurements - https://www.dimensions.com/element/badminton-shuttlecock#:~:text=Badminton%20Shuttlecocks%20have%20a%20head,the%20height%20of%20the%20head
+
+jQuery Library, open source (uncompressed) - https://jquery.com/download/ 

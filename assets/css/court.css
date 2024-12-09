@@ -9,7 +9,7 @@ body {
   margin-right: 100px;
   margin-bottom: 100px;
 }
-.court {
+#court {
   display: grid;
   grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
   grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
