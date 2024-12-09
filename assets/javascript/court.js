@@ -23,10 +23,9 @@ function showDoublesCourt() {
   setAllAreas("");
 }
 
-function fn1(){
-  $(".court").fadeToggle();
-}
+//  TRY to write a fade in fade out function using jQuery
+// function fn1(){
+//   $(".court").fadeToggle();
+// }
 
 // Shuttle Moving on court
-shuttle = document.getElementById('shuttle');
- function moveShuttle
