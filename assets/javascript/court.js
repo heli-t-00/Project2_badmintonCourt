@@ -25,7 +25,7 @@ function showDoublesCourt() {
 
 
 
-// W3 school 
+// W3 school Animation CODE
 function myMove() {
   let id = null;
   const elem = document.getElementById("animate");   
