@@ -43,11 +43,11 @@ function myMove() {
   }
 }
 
-// this function 
+//  TRY to write a fade in fade out function using jQuery
 function showCourt (){
  court = document.getElementsByClassName ("court")[0];
  court.style.opacity = "100%";
- court.style.transition = "opacity 5s";
+ court.style.transition = "opacity 5sec";
  intro = document.getElementsByClassName ("intro")[0];
  intro.style.display = "none";
  bar = document.getElementsByClassName ("bar")[0];
@@ -56,8 +56,6 @@ function showCourt (){
  shuttle.style.display = "block";
 
 }
-
-//  TRY to write a fade in fade out function using jQuery
 // function fn1(){
 //   $(".court").fadeToggle();
 // }

@@ -9,13 +9,14 @@ body {
   margin-right: 100px;
   margin-bottom: 100px;
 }
-#court {
+.court {
   display: grid;
   grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
   grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
   zoom: 70%;
   /* rotate: -90deg; */
   transform-origin: 0 0;
+  opacity: 0%; /* makes the court appear/disappear with opacity*/
 }
 .line {
   border-style: solid;
@@ -30,6 +31,11 @@ body {
 .net {
   background-color: red;
   border-color: red;
+}
+/*  */
+.bar {
+  display: none;
+  
 }
 
 /* Media query:  */
