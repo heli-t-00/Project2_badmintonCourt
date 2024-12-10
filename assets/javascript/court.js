@@ -23,9 +23,51 @@ function showDoublesCourt() {
   setAllAreas("");
 }
 
+
+
+// W3 school 
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
 //  TRY to write a fade in fade out function using jQuery
+function showCourt (){
+ court = document.getElementsByClassName ("court")[0];
+ court.style.opacity = "100%";
+ court.style.transition = "opacity 5sec";
+ intro = document.getElementsByClassName ("intro")[0];
+ intro.style.display = "none";
+ bar = document.getElementsByClassName ("bar")[0];
+ bar.style.display ="flex";
+ shuttle = document.getElementsByClassName ("shuttle");
+ shuttle.style.display = "block";
+
+}
 // function fn1(){
 //   $(".court").fadeToggle();
 // }
 
 // Shuttle Moving on court
+function moveOnClick(event, el) {
+  let shuttle = document.getElementsByClassName("shuttle")[0];
+  if (el && shuttle) {
+    let bcr = el.getBoundingClientRect();
+    let ibcr = shuttle.getBoundingClientRect();
+    moveShuttle(shuttle, event.clientX - 25, event.clientY - 25, 0, 30);
+    shuttle.style.transitionProperty = "all";
+    shuttle.style.transitionDuration = "1s";
+  }
+}
