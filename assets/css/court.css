@@ -1,3 +1,4 @@
+/* Basic styling for body */
 body {
   justify-content: center;
   width: 100vw;
@@ -9,6 +10,8 @@ body {
   margin-right: 100px;
   margin-bottom: 100px;
 }
+
+/* Court grid styling  used BWF court sizing guidelines for court proportions*/
 .court {
   display: grid;
   grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
@@ -24,9 +27,11 @@ body {
   background-color: white;
   border-width: 1px;
 }
+
+/* Each grid section/area styling */
 .area {
   background-color: green;
-  cursor: grab; /*grabs the cursor to show you're doing something*/
+  cursor: grab; /*grabs the cursor to show you're doing something change to hand*/
 }
 .net {
   background-color: red;
@@ -37,5 +42,18 @@ body {
   display: none;
   
 }
+
+  svg {
+            animation-name: shuttle;
+            animation-duration: 1s;
+            position: absolute;
+            top: 10;
+            left: 10;
+            scale: 30%;
+            /* transition: transform 0.5s ease-in-out; */
+        }
+        /* svg:hover {
+            transform: rotate(360deg);
+        }  */
 
 /* Media query:  */
