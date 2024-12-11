@@ -43,17 +43,18 @@ body {
   
 }
 
-  svg {
-            animation-name: shuttle;
-            animation-duration: 1s;
-            position: absolute;
-            top: 10;
-            left: 10;
-            scale: 30%;
-            /* transition: transform 0.5s ease-in-out; */
-        }
-        /* svg:hover {
-            transform: rotate(360deg);
-        }  */
+#shuttle {
+  position: absolute;
+  display: none;
+  top: 10px;
+  left: 10px;
+  transition: left 1s, top 1s;
+}
+
+#shuttleimage {
+  zoom: 20%;
+  transition: all 1s;
+}
+
 
 /* Media query:  */

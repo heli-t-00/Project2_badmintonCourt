@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Badminton Basics</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/court.css" />
     
     <script src="assets\javascript\court.js"></script>
@@ -175,12 +176,14 @@ Ready to Learn the rules of Badminton? Let’s dive in!</p>
       <div class="line"></div>
 
     </div>
-    <svg width="30" height="30" viewport(0,0,,30) id="shuttle" onMouseDown="rotateOnClick(event,this)">
-        <g fill="#fff" stroke="#000" stroke-width="4">
-            <circle cx="14" cy="14" r="14" />
-           
-        </g>
-    </svg>
+     <div id="shuttle">
+      <svg width="30px" height="30px" viewport(0,0,30,30) id="shuttleimage">
+          <g fill="#fff" stroke="#000" stroke-width="4px">
+              <circle cx="14px" cy="14px" r="14px" />
+              <!-- <path d="m0 0 68 0-22 72-24 0z" /> -->
+          </g>
+      </svg>
+  </div>
   </body>
   <script src="assets\javascript\jquery-library.js"></script>
 </html>
