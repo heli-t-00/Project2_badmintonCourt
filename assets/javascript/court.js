@@ -6,7 +6,7 @@ function setAllAreas(including) {
     .call(document.getElementsByClassName("area"))
     .forEach((area) => {
       if (area.id.includes(including)) area.style.background = "blue";
-      else area.style.background = "red";
+      else area.style.background = "darkred";
     });
 }
 
