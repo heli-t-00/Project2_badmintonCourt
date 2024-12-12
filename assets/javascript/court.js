@@ -11,7 +11,7 @@ function setAllAreas(including) {
 }
 
 // Calculates the angle in degrees between the origin (0, 0) and a point (x, y).
-// Computes the angle in radians using Math.atan2(y, x).
+// use Math.atan2(y, x) - Computes the angle used by determining x and y
 // Converts the angle to degrees by multiplying with (180 / Math.PI).
 // Ensures the angle is positive by adding 360 if it's negative.
 
@@ -45,18 +45,26 @@ function moveShuttle(shuttle, x, y) {
   );
 }
 
-// Move on click
+// Moves the shuttle when an area on the court is clicked.
 function clickOnArea(event, area) {
   console.log(`clickOnArea ${event.pageX}, ${event.pageY},${area.id}`);
+  // Logs the click event's coordinates and the clicked area's id
   let shuttle = document.getElementById("shuttle");
+  // Finds the shuttle element using getElementById("shuttle").
   if (area && shuttle) {
     moveShuttle(shuttle, event.pageX, event.pageY);
   }
+  // Calls moveShuttle with the shuttle element and the click event's pageX and pageY coordinates.
 }
 
+
+// Highlights the singles court areas.
+// this function Calls setAllAreas with the string "1" refer to html where i've names the areas with unique id name 
+// This highlights all areas with id containing "1" by setting their background to blue, and the rest to red.
 function showSinglesCourt() {
   setAllAreas("1");
 }
+// Highlights the doubles court areas
 function showDoublesCourt() {
   setAllAreas("");
 }
