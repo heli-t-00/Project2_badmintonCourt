@@ -1,5 +1,5 @@
-// Click to change color of areas on court function
-// added if/else conditional selection of area to change color using ID
+// Changes the background color of areas on the court 
+// added if/else conditional selection of area to change color using ID in this case its 'area'
 // eg. ALL singles court area has 1 in ID
 function setAllAreas(including) {
   Array.prototype.slice
@@ -10,20 +10,26 @@ function setAllAreas(including) {
     });
 }
 
+// Calculates the angle in degrees between the origin (0, 0) and a point (x, y).
+// Computes the angle in radians using Math.atan2(y, x).
+// Converts the angle to degrees by multiplying with (180 / Math.PI).
+// Ensures the angle is positive by adding 360 if it's negative.
+
 function getAngleInDegrees(x, y) {
   angle = Math.round(Math.atan2(y, x) * (180 / Math.PI));
   return angle < 0 ? (angle += 360) : angle;
 }
 
-/* Move the shuttle to x,y and set the scale to s*/
+/* Moves a shuttle element to a specified (x, y) position on the page. and set the scale to s*/
 function moveShuttle(shuttle, x, y) {
+  /*Logs the current position and properties of the shuttle. */
   console.log(
     `Shuttle top=${shuttle.style.top}` +
       ` left=${shuttle.style.left}` +
       ` zoom=${shuttle.style.zoom}` +
       ` transform=${shuttle.style.transform}`
   );
-  o = shuttle.getBoundingClientRect(); /* old position */
+  o = shuttle.getBoundingClientRect(); /* gets the old position */
   console.log(`moveShuttle (${o.left},${o.top})`);
   /* set the new position */
   shuttle.style.top = `${y - o.height / 2}px`;
