@@ -73,29 +73,4 @@ a {
             padding: 10px;
         }
 
-        /* Individual tool tips per area */
-        #TRL2:after { content: "Top Rear Left Tramline"; left: 0 }
-        #TRL1:after { content: "Top Rear Left"; }
-        #TRR1:after { content: "Top Rear Right"; }
-        #TRR2:after { content: "Top Rear Right Tramline"; right: 0 }
-        #TML2:after { content: "Top Middle Left Tramline"; left: 0 }
-        #TML1:after { content: "Top Middle Left"; }
-        #TMR1:after { content: "Top Middle Right"; }
-        #TMR2:after { content: "Top Middle Right Tramline"; right: 0 }
-        #TFL2:after { content: "Top Front Left Tramline"; left: 0 }
-        #TFL1:after { content: "Top Front Left"; }
-        #TFR1:after { content: "Top Front Right"; }
-        #TFR2:after { content: "Top Front Right Tramline"; right: 0 }
-        #BFL2:after { content: "Bottom Front Left Tramline"; left: 0 }
-        #BFL1:after { content: "Bottom Front Left"; }
-        #BFR1:after { content: "Bottom Front Right"; }
-        #BFR2:after { content: "Bottom Front Right Tramline"; right: 0 }
-        #BML2:after { content: "Bottom Middle Left Tramline"; left: 0 }
-        #BML1:after { content: "Bottom Middle Left"; }
-        #BMR1:after { content: "Bottom Middle Right"; }
-        #BMR2:after { content: "Bottom Middle Right Tramline"; right: 0 }
-        #BRL2:after { content: "Bottom Rear Left Tramline"; left: 0 }
-        #BRL1:after { content: "Bottom Rear Left"; }
-        #BRR1:after { content: "Bottom Rear Right"; }
-        #BRR2:after { content: "Bottom Rear Right Tramline"; right: 0 }
 /* Media query:  */
