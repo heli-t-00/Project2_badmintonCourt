@@ -108,7 +108,7 @@ circle is drawn identically in both coordinate systems.  -->
 <svg width="200" height="400">
     <!-- windmill head -->
   <g id="windmill-head" transform="translate(200, 400)">
-<circle r="8" />
+<circle r="3" />
 <path id="arm" 
 d=" M -7 -20
 C -7 -10 7 -10 7 -20
@@ -123,5 +123,28 @@ stroke="green" fill="green"/>
 </svg>
 <!-- g tag is similar to a div tag -->
 
+<svg width="68" height="98" viewBox="0,0,68,98">
+            <g fill="#fff" stroke="#000" stroke-width="4"></g>
+              <circle cx="34" cy="80" r="14" />
+                <!-- 
+                path begins with a "m" for move and then x and y 0,0
+                Then each x,y point draws a line to that point from the prior point 
+                Then "z" closes the path by drawing back to the first point
+                So it is
+                Move to 0,0
+                Draw to 68,0
+                Draw to -22,72
+                Draw to -24,0
+                Close by drawing back to first point 0,0
+                This becomes a shape which you can now fill
+                -->
+                
+                <path d="m0 0 68 0-22 72-24 0z" />
+            </g>
+        </svg>
+
+<svg width="68" height="98" viewBox="0,0,68,98">
+         <circle cx="34" cy="80" r="14" />
+</svg>
   </body>
 </html>
