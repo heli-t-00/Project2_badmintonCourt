@@ -1,4 +1,7 @@
-// Changes the background color of areas on the court 
+// initialised the shutttle and court variables which I will set later, so that it can be used later in functions.
+let shuttle = null; //Set this on displaying the court
+let court = null; //Set this on displaying the court
+// Changes the background color of areas on the court
 // added if/else conditional selection of area to change color using ID in this case its 'area'
 // eg. ALL singles court area has 1 in ID
 function setAllAreas(including) {
@@ -57,9 +60,8 @@ function clickOnArea(event, area) {
   // Calls moveShuttle with the shuttle element and the click event's pageX and pageY coordinates.
 }
 
-
 // Highlights the singles court areas.
-// this function Calls setAllAreas with the string "1" refer to html where i've names the areas with unique id name 
+// this function Calls setAllAreas with the string "1" refer to html where i've names the areas with unique id name
 // This highlights all areas with id containing "1" by setting their background to blue, and the rest to red.
 function showSinglesCourt() {
   setAllAreas("1");
@@ -68,8 +70,6 @@ function showSinglesCourt() {
 function showDoublesCourt() {
   setAllAreas("");
 }
-
-
 
 // Allows court to appear and intro to fade out
 
@@ -85,3 +85,20 @@ function showCourt() {
   shuttle.style.display = "block";
 }
 
+// coloring the areas on the court
+function setAreas(ids, colour) {
+  ids.forEach((id) => {
+    area = document.getElementById(id);
+    if (area) {
+      area.style.background = colour;
+    }
+  });
+}
+function setAllAreas(filter, colour, altcol = "green") {
+  Array.prototype.slice
+    .call(document.getElementsByClassName("area"))
+    .forEach((de) => {
+      if (de.id.includes(filter)) de.style.background = colour;
+      else de.style.background = altcol;
+    });
+}
