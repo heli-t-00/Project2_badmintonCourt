@@ -1,4 +1,6 @@
 # Project 2 Badminton Basics
+Check out the deployed Badminton Basics (https://heli-t-00.github.io/Project2_badmintonCourt/)
+
 ## Table of Contents
 ### 1.[Introduction](#Introduction)
 ### 2. [Desired Outcome](#desired-outcome)
@@ -32,21 +34,19 @@ This project intends to satisfy the following objectives:
 - LO3: Deploy the web application to a cloud platform for public access.
 - LO4: Maximise future maintainability through clear documentation and organised code structure.
 - LO5: Document the development process using version control tools like GitHub.
-- LO6: Implement front-end interactivity using core JavaScript and advanced features (e.g., tooltips and animations).
+- LO6: Implement front-end interactivity using core JavaScript and advanced features.
 
 # Proposed Features
-Building on the existing [Project 1] (https://heli-t-00.github.io/Project1_NPBadminton/), I will introduce the following:
-
 ## Interactive Badminton Court: Users can click areas of interest on the court to learn the rules.
 ### User Story - Single Court Player:
-- Identify valid play areas for single player games.
-- Identify service areas for singles.
+- As a new user, I want to...'Identify valid play areas for single player game'.
+- As a new user, I want to... 'Identify service areas for single player game'.
 ### User Story - Double Court Players:
-- Identify valid play areas for double players games.
-- Identify service areas for double players.
+- As a new user, I want to... 'Identify valid play areas for double players game'.
+- As a new user, I want to... 'Identify service areas for double players game'.
 
 * Use animation, to illustrate service zones.
-* Tooltips with additional explanations for each area.
+* Additional Feature: Tooltips with additional explanations for each area.
 
 This project will demonstrate my ability to integrate technical knowledge with design principles to create an accessible and responsive web application.
 
@@ -57,6 +57,34 @@ When designing the website, my focus was on creating an intuitive experience. I 
 <img src="assets/images/wireframe_2pg.jpg" alt="idea 1">
 <img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
 
+### Testing
+To ensure all features work as intended. The following test was performed
+
+### Responsive
+
+The website is XXXX
+
+[Am I Responsive?]
+
+### Browser Friendly
+
+The site has been tested for the following browsers: Chrome, Firefox, Safari, Edge, Vivaldi, Brave, and Tor Browser.
+
+Check use this [Browserling.com]
+
+### Accessible
+
+checked accessibility using Lighthouse tool on Google Dev tools.
+
+![](assets/images/readmeimages/Lighthouse.png)
+
+### Validator Testing
+
+HTML
+No errors were returned when passing through the official [W3C Nu HTML Checker](https://validator.w3.org/nu/).
+
+CSS
+No errors were found when passing through the official validator - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator). The document validates as CSS level 3 + SVG.
 
 ### Credits
 * Basic badminton information selected from  - 
