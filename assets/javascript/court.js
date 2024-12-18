@@ -108,3 +108,20 @@ function setAreas(ids, colour) {
     }
   });
 }
+ // SERVING
+        function serve(fromId,toId,validAreas) {
+            setAllAreas("","red"); //set whole court to green
+            setAreas(validAreas,"green")
+            let fromArea = document.getElementById(fromId);
+            toArea = document.getElementById(toId);
+            if (fromArea && toArea) {
+                fromRect = fromArea.getBoundingClientRect();
+                toRect = toArea.getBoundingClientRect();
+                pX = fromRect.left + fromRect.width / 2;
+                pY = fromRect.top + fromRect.height / 2;
+                moveShuttle(pX,pY,20);
+                pX = toRect.left + toRect.width / 2;
+                pY = toRect.top + toRect.height / 2;
+                delay(1000).then(() => moveShuttle(pX,pY,20));
+            }
+        }
