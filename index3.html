@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badminton Basics</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/court.css" />
+    
+    <script></script>
+  </head>
+  <body>
+   <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
+     <div class="intro">
+      <h1>Badminton Basics</h1>
+      <br>
+
+     <p>The Basic Rules of Badminton: 
+      <br>
+Playing a sport without knowing the rules limits the ability of play. 
+Learn the basic rules of Badminton before playing helps you enjoy the game from the get go!
+<br>
+<a href="https://bwfbadminton.com/" target ="_blank">Badminton World Federation (BWF)</a>  
+lays down the rules. 
+
+
+<br>
+
+<p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
+      <br>
+      <button onclick="showCourt ()" id="btn1">Let's Start!</button>
+    </div>
+    <br> 
+    <div class="bar">
+      <!-- buttons showing valid court areas -->
+      <button onClick="showSinglesCourt()">Singles Court</button>
+      <button onClick="showDoublesCourt()">Doubles Court</button>
+    </div>
+    <br />
+    <div class="court">
+      <!-- 1st row - line -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <!-- Second row -Court area- Top Rear Section
+       ****add id to Areas to identify each one****
+       REFERENCE key: 
+      4 character ID ie. TFL1 denotes Top Front Left 1 
+      0: T (top) B (bottom) - identifies which side of the net
+      1: F (front) M (middle) R (rear) location from NET
+      2: L (left) R (right) - sides of the court
+      3: 1 or 2 distance from the middle / centre -->
+      <div class="line"></div>
+      <div class="area" id="TRL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TRR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+<!-- 3rd row - line-  -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+<!-- 4th row - Court area -Mid section -->
+      <div class="line"></div>
+      <div class="area" id="TML2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TML1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TMR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TMR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+<!-- 5th row - Line -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+<!-- 6th row - Court area - Front section Top -->
+      <div class="line"></div>
+      <div class="area" id="TFL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="TFR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+<!-- 7th row - Net Line  -->
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+      <div class="net"></div>
+<!-- 8th row - Court area - Front section Bottom -->
+      <div class="line"></div>
+      <div class="area" id="BFL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BFR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+<!-- 9th row - Line -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <!-- 10th row - Court Area - Mid section bottom -->
+      <div class="line"></div>
+      <div class="area" id="BML2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BML1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BMR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BMR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <!-- 11th row - Line -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <!-- 12th row - Court area - Rear Section bottom -->
+      <div class="line"></div>
+      <div class="area" id="BRL2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRL1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRR1" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <div class="area" id="BRR2" onClick="clickOnArea(event,this)"></div>
+      <div class="line"></div>
+      <!-- 13th row - Line -->
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+    </div>
+     <div id="shuttle">
+  <svg width="68" height="98" viewBox="0,0,68,98" id="shuttleimage" onMouseDown="rotateOnClick(event,this)">
+        <g fill="#fff" stroke="#000" stroke-width="4">
+            <circle cx="34px" cy="80px" r="14px" />
+            <path d="m0 0 68 0-22 72-24 0z" />
+        </g>
+    </svg>
+  </div>
+  </body>
+  <script src="assets\javascript\jquery-library.js"></script>
+</html>
