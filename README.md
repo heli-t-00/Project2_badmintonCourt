@@ -1,4 +1,14 @@
 # Project 2 Badminton Basics
+## Table of Contents
+### 1.[Introduction](#Introduction)
+### 2. [Desired Outcome](#desired-outcome)
+### 3. [Proposed Features](#proposed-features)
+### 4. [Wireframe](#wireframe)
+### 5. [Design](#design)
+### 6. [Features and Responsitivity](#features-and-responsitivity)
+### 7. [Testing](#testing)
+### 8. [GitHub Deployment](#github-deployment)
+### 9. [Credits](#credits)
 
 # Introduction 
 

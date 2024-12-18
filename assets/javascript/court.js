@@ -19,34 +19,48 @@ function setAllAreas(including) {
 // Ensures the angle is positive by adding 360 if it's negative.
 
 function getAngleInDegrees(x, y) {
-  angle = Math.round(Math.atan2(y, x) * (180 / Math.PI));
-  return angle < 0 ? (angle += 360) : angle;
+  let angle = Math.round(Math.atan2(y, x) * (180 / Math.PI));
+  return angle < 0 ? (angle + 360) : angle;
 }
 
 /* Moves a shuttle element to a specified (x, y) position on the page. and set the scale to s*/
-function moveShuttle(shuttle, x, y) {
-  /*Logs the current position and properties of the shuttle. */
+function moveShuttle(shuttle, x, y, s) {
+  // Logs the current position and properties of the shuttle
   console.log(
     `Shuttle top=${shuttle.style.top}` +
       ` left=${shuttle.style.left}` +
+      ` scale=${shuttle.style.scale}` +
       ` zoom=${shuttle.style.zoom}` +
       ` transform=${shuttle.style.transform}`
   );
-  o = shuttle.getBoundingClientRect(); /* gets the old position */
-  console.log(`moveShuttle (${o.left},${o.top})`);
-  /* set the new position */
+
+  // Get the old position of the shuttle
+  const o = shuttle.getBoundingClientRect();
+  console.log(`moveShuttle (${o.left}, ${o.top})`);
+
+  // Calculate angle of movement (optional rotation)
+  const angle = getAngleInDegrees(x - o.left, y - o.top);
+  console.log(`moveShuttle angle=${angle}`);
+
+  // Set the new position (centered)
   shuttle.style.top = `${y - o.height / 2}px`;
   shuttle.style.left = `${x - o.width / 2}px`;
-  // shuttle.style.scale=`${s}%`;
-  shuttleImage = document.getElementById("shuttleimage");
-  shuttleImage.style.zoom = `${s}%`;
+
+  // Apply scaling 
+  shuttle.style.scale = `${s}%`;
+
+  // Apply rotation (angle of movement)
+  shuttle.style.transform = `rotate(${angle - 90}deg)`;
+
+  // Logs the updated position and properties
   console.log(
     `Shuttle top=${shuttle.style.top}` +
       ` left=${shuttle.style.left}` +
-      ` zoom=${shuttle.style.zoom}` +
+      ` scale=${shuttle.style.scale}` +
       ` transform=${shuttle.style.transform}`
   );
 }
+
 
 // Moves the shuttle when an area on the court is clicked.
 function clickOnArea(event, area) {
@@ -93,12 +107,4 @@ function setAreas(ids, colour) {
       area.style.background = colour;
     }
   });
-}
-function setAllAreas(filter, colour, altcol = "green") {
-  Array.prototype.slice
-    .call(document.getElementsByClassName("area"))
-    .forEach((de) => {
-      if (de.id.includes(filter)) de.style.background = colour;
-      else de.style.background = altcol;
-    });
 }
