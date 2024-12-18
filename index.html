@@ -24,7 +24,8 @@
         display: grid;
         grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
         grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
-        zoom: 70%;
+        /* zoom: 70%; */
+        scale: 70%;
         transform-origin: 0 0;
         opacity: 0%; /* makes the court appear/disappear with opacity*/
       }
@@ -110,11 +111,9 @@
         /* set the new position */
         shuttle.style.top = `${y - o.height / 4}px`;
         shuttle.style.left = `${x - o.width / 2}px`;
-        let shuttleImage = document.getElementById('shuttleimage');
-        // shuttleImage.style.zoom = `${s}%`;
         shuttle.style.transform = `rotate(${angle - 90}deg)`; /* angle of movement */
-        // shuttle.style.scale = `${s}%`;
-        // shuttle.style.transform = `rotate(${angle - 90}deg)`; /* angle of movement */
+        let shuttleImage = document.getElementById('shuttleimage');
+        shuttleImage.style.zoom = `${s}%`;
         console.log(
           `Shuttle top=${shuttle.style.top}` +
             ` left=${shuttle.style.left}` +
@@ -284,6 +283,9 @@
       <!-- buttons showing valid court areas -->
       <button onClick="showSinglesCourt()">Singles Court</button>
       <button onClick="showDoublesCourt()">Doubles Court</button>
+      <button onClick="serve('TML1', 'BML1', ['BMR1', 'BRR1'])">Singles Service</button>
+      <button onClick="serve('TML1', 'BML1', ['BMR1', 'BRR2'])">Doubles Service</button>
+ 
     </div>
     <br />
     <div id="nextMove"></div>
