@@ -46,7 +46,9 @@ This project intends to satisfy the following objectives:
 - As a new user, I want to... 'Identify service areas for double players game'.
 
 * Use animation, to illustrate service zones.
-* Additional Feature: Tooltips with additional explanations for each area.
+* Additional Feature:
+    - a test for user to check whether they can identify service area
+    - a test to identify areas of the court
 
 This project will demonstrate my ability to integrate technical knowledge with design principles to create an accessible and responsive web application.
 
@@ -93,6 +95,15 @@ No errors were found when passing through the official validator - [W3C CSS Vali
 * The badminton bible https://www.badmintonbible.com/rules/simple 
 * Badminton Racket Review https://badminton-racket-review.com/blogs/news/the-basic-rules-of-badminton-a-complete-guide?srsltid=AfmBOoo5r_TSvwWOotnKWtKx1qUooksrATSlBHoDRASuwph3uQUF1xMg 
 * CSS Grid Layout Module https://www.w3schools.com/css/css_grid.asp 
+
+* Javascript - changing background colours
+https://www.youtube.com/watch?v=nWAupAORchs
+https://www.youtube.com/watch?v=1hfradAOvYc
+
+* SVG Tutorials 
+https://www.w3schools.com/graphics/svg_intro.asp
+https://www.youtube.com/watch?v=WzxBfkUtM1Y
+https://webdesign.tutsplus.com/svg-viewport-and-viewbox-for-beginners--cms-30844t
 
 
 * Shuttle shape button - https://travishorn.com/buttons-with-custom-shapes-cabdcde7dfd1
