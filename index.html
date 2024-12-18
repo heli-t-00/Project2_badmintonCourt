@@ -4,39 +4,289 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Badminton Basics</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/court.css" />
-    
-    <script src="assets\javascript\court.js"></script>
+
+    <style>
+      /* Basic styling for body */
+      body {
+        justify-content: center;
+        width: 100vw;
+        align-items: center;
+        background-color: black;
+        color: white;
+        margin-top: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 100px;
+      }
+
+      /* Court grid styling  used BWF court sizing guidelines for court proportions*/
+      .court {
+        display: grid;
+        grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
+        grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
+        zoom: 70%;
+        transform-origin: 0 0;
+        opacity: 0%; /* makes the court appear/disappear with opacity*/
+      }
+      .line {
+        border-style: solid;
+
+        background-color: white;
+        border-width: 1px;
+      }
+
+      /* Each grid section/area styling */
+      .area {
+        background-color: rgba(43, 93, 231, 0.821);
+        cursor: grab; /*grabs the cursor to show you're doing something change to hand*/
+      }
+      .net {
+        background-color: rgb(195, 19, 231);
+        border-color: rgb(195, 19, 231);
+      }
+      .bar {
+        display: none;
+      }
+
+      #shuttle {
+        position: absolute;
+        display: none;
+        top: 10px;
+        left: 10px;
+        transition: left 1s, top 1s;
+      }
+
+      #shuttleimage {
+        zoom: 20%;
+        transition: all 1s;
+      }
+
+      a {
+        color: red;
+      }
+
+      /* CSS to display tool tips above the class area divs */
+      .area:hover:after {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: fit-content;
+        white-space: nowrap;
+        background-color: darkgray;
+        color: black;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      /* Media query:  */
+    </style>
   </head>
   <body>
-   <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
-     <div class="intro">
+    <script>
+      var play = 0; //Current level of game
+      var lastMove = ""; //Last area shuttle was placed in
+
+      function delay(time) {
+        //Allow a pause between steps
+        return new Promise((resolve) => setTimeout(resolve, time));
+      }
+      function getAngleInDegrees(x, y) {
+        let angle = Math.round(Math.atan2(y, x) * (180 / Math.PI));
+        return angle < 0 ? angle + 360 : angle;
+      }
+      /* Move the shuttle to x,y and set the scale to s*/
+      function moveShuttle(x, y, s) {
+        let shuttle = document.getElementById("shuttle");
+        console.log(
+          `Shuttle top=${shuttle.style.top}` +
+            ` left=${shuttle.style.left}` +
+            ` scale=${shuttle.style.scale}` +
+            ` transform=${shuttle.style.transform}`
+        );
+        let o = shuttle.getBoundingClientRect(); /* old position */
+        console.log(`moveShuttle (${o.left},${o.top})`);
+        let angle = getAngleInDegrees(x - o.left, y - o.top);
+        console.log(`moveShuttle angle=${angle}`);
+        /* set the new position */
+        shuttle.style.top = `${y - o.height / 4}px`;
+        shuttle.style.left = `${x - o.width / 2}px`;
+        let shuttleImage = document.getElementById('shuttleimage');
+        // shuttleImage.style.zoom = `${s}%`;
+        shuttle.style.transform = `rotate(${angle - 90}deg)`; /* angle of movement */
+        // shuttle.style.scale = `${s}%`;
+        // shuttle.style.transform = `rotate(${angle - 90}deg)`; /* angle of movement */
+        console.log(
+          `Shuttle top=${shuttle.style.top}` +
+            ` left=${shuttle.style.left}` +
+            ` scale=${shuttle.style.scale}` +
+            ` transform=${shuttle.style.transform}`
+        );
+      }
+      function setAreas(ids, colour) {
+        ids.forEach((id) => {
+          let area = document.getElementById(id);
+          if (area) {
+            area.style.background = colour;
+          }
+        });
+      }
+      function setAllAreas(filter, colour, altcol = "green") {
+        Array.prototype.slice
+          .call(document.getElementsByClassName("area"))
+          .forEach((de) => {
+            if (de.id.includes(filter)) de.style.background = colour;
+            else de.style.background = altcol;
+          });
+      }
+
+      // SERVING
+      function serve(fromId, toId, validAreas) {
+        setAllAreas("", "red"); //set whole court to green
+        setAreas(validAreas, "green");
+        let fromArea = document.getElementById(fromId);
+        let toArea = document.getElementById(toId);
+        if (fromArea && toArea) {
+          let fromRect = fromArea.getBoundingClientRect();
+          let toRect = toArea.getBoundingClientRect();
+          let pX = fromRect.left + fromRect.width / 2;
+          let pY = fromRect.top + fromRect.height / 2;
+          moveShuttle(pX, pY, 20);
+          pX = toRect.left + toRect.width / 2;
+          pY = toRect.top + toRect.height / 2;
+          delay(1000).then(() => moveShuttle(pX, pY, 20));
+        }
+      }
+
+      // GAME
+      function clickOnArea(event, el) {
+        if (play > 0) playGame(event, el);
+        else setGameText("");
+        setAllAreas("", "green"); /* set whole court to green */
+        console.log(`moveOnClick ${event.pageX},${event.pageY}`);
+        moveShuttle(event.pageX, event.pageY, 20);
+      }
+      function setGameText(t) {
+        document.getElementById("nextMove").innerText = t;
+      }
+      function checkIfValidMove(validChoice, id, successText) {
+        console.log(`validMove ${id},${validChoice} => ${successText}`);
+        if (validChoice) {
+          lastMove = id; //Save the area selected
+          play += 1;
+          setGameText(successText);
+        } else {
+          setGameText("You lost the game!");
+          play = 0;
+        }
+      }
+      function playGame(event, el) {
+        switch (play) {
+          case 1:
+            checkIfValidMove(
+              el.id.indexOf("1") >= 0 && //Element id has a 1 in it so is not a tramline
+                el.id.indexOf("F") < 0, //Element id does not have an F in it so is not a front area
+              el.id,
+              "Select a valid singles service destination area"
+            );
+            break;
+          case 2:
+            //Get a valid area by swapping T and B as well as L and R to give the diagonal area
+            let validMid = `${lastMove[0] == "T" ? "B" : "T"}M${lastMove[2] == "L" ? "R" : "L"}1`;
+            let validRear = validMid.replace("M", "R"); //Get the rear area by swapping M for R
+            console.log(`Valid areas are ${validMid} & ${validRear}`);
+            checkIfValidMove(
+              validMid == el.id || validRear == el.id,
+              el.id,
+              "Select a valid singles rear court return destination area"
+            );
+            break;
+          case 3:
+            validMid = `${lastMove[0] == "T" ? "B" : "T"}RR1`;
+            validRear = validMid.replace("R1", "L1");
+            checkIfValidMove(
+              validMid == el.id || validRear == el.id,
+              el.id,
+              "Yay, you won the game!"
+            );
+            lastMove = "";
+            play = 0;
+            break;
+          default: // In case we ever get another value
+            play = 0;
+        }
+      }
+      function testPlay() {
+        setGameText("Select a valid singles starting service area");
+        play = 1;
+      }
+      // MAKING IT RESPONSIVE - using function instead of media query
+      function fitCourtToScreen(way) {
+        let prect = document.body.getBoundingClientRect();
+        let court = document.getElementsByClassName("court")[0];
+        if (way == 0) {
+          if (!court.classList.contains("flipped"))
+            court.classList.add("flipped");
+        } else if (court.classList.contains("flipped")) {
+            court.classList.remove("flipped");
+        }
+        let crect = court.getBoundingClientRect();
+        let angle = getRotationAngle(court);
+        if (angle == 90)
+          court.style.zoom = `${
+            (prect.width / (crect.top + court.clientHeight + 40)) * 100
+          }%`;
+        else
+          court.style.zoom = `${
+            (prect.height / (crect.top + court.clientHeight + 40)) * 100
+          }%`;
+        console.log(`zoom=${court.style.zoom} angle=${angle}`);
+      }
+      function showCourt() {
+            courtType = document.getElementById("courtType");
+            court = document.getElementsByClassName("court")[0];
+            court.style.opacity = "100%";
+            court.style.transition = "opacity 5s";
+            intro = document.getElementsByClassName("intro")[0];
+            intro.style.display = "none";
+            bar = document.getElementsByClassName("bar")[0];
+            bar.style.display = "flex";
+            shuttle = document.getElementById("shuttle");
+            shuttle.style.display = "block";
+        }
+    </script>
+
+    <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
+    <div class="intro">
       <h1>Badminton Basics</h1>
-      <br>
+      <br />
 
-     <p>The Basic Rules of Badminton: 
-      <br>
-Playing a sport without knowing the rules limits the ability of play. 
-Learn the basic rules of Badminton before playing helps you enjoy the game from the get go!
-<br>
-<a href="https://bwfbadminton.com/" target ="_blank">Badminton World Federation (BWF)</a>  
-lays down the rules. 
+      <p>
+        The Basic Rules of Badminton:
+        <br />
+        Playing a sport without knowing the rules limits the ability of play.
+        Learn the basic rules of Badminton before playing helps you enjoy the
+        game from the get go!
+        <br />
+        <a href="https://bwfbadminton.com/" target="_blank"
+          >Badminton World Federation (BWF)</a
+        >
+        lays down the rules.
 
+        <br />
+      </p>
 
-<br>
-
-<p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
-      <br>
-      <button onclick="showCourt ()" id="btn1">Let's Start!</button>
+      <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
+      <br />
+      <button onclick="showCourt()" id="btn1">Let's Start!</button>
     </div>
-    <br> 
+    <br />
     <div class="bar">
       <!-- buttons showing valid court areas -->
       <button onClick="showSinglesCourt()">Singles Court</button>
       <button onClick="showDoublesCourt()">Doubles Court</button>
     </div>
     <br />
+    <div id="nextMove"></div>
     <div class="court">
       <!-- 1st row - line -->
       <div class="line"></div>
@@ -65,7 +315,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="area" id="TRR2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
-<!-- 3rd row - line-  -->
+      <!-- 3rd row - line-  -->
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -75,7 +325,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
-<!-- 4th row - Court area -Mid section -->
+      <!-- 4th row - Court area -Mid section -->
       <div class="line"></div>
       <div class="area" id="TML2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
@@ -85,7 +335,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="area" id="TMR2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
-<!-- 5th row - Line -->
+      <!-- 5th row - Line -->
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -95,7 +345,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
-<!-- 6th row - Court area - Front section Top -->
+      <!-- 6th row - Court area - Front section Top -->
       <div class="line"></div>
       <div class="area" id="TFL2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
@@ -105,7 +355,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="area" id="TFR2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
-<!-- 7th row - Net Line  -->
+      <!-- 7th row - Net Line  -->
       <div class="net"></div>
       <div class="net"></div>
       <div class="net"></div>
@@ -115,7 +365,7 @@ lays down the rules.
       <div class="net"></div>
       <div class="net"></div>
       <div class="net"></div>
-<!-- 8th row - Court area - Front section Bottom -->
+      <!-- 8th row - Court area - Front section Bottom -->
       <div class="line"></div>
       <div class="area" id="BFL2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
@@ -125,7 +375,7 @@ lays down the rules.
       <div class="line"></div>
       <div class="area" id="BFR2" onClick="clickOnArea(event,this)"></div>
       <div class="line"></div>
-<!-- 9th row - Line -->
+      <!-- 9th row - Line -->
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -175,16 +425,19 @@ lays down the rules.
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
-
     </div>
-     <div id="shuttle">
-  <svg width="68" height="98" viewBox="0,0,68,98" id="shuttleimage" onMouseDown="rotateOnClick(event,this)">
+    <div id="shuttle">
+      <svg
+        width="68"
+        height="98"
+        viewBox="0,0,68,98"
+        id="shuttleimage"
+      >
         <g fill="#fff" stroke="#000" stroke-width="4">
-            <circle cx="34px" cy="80px" r="14px" />
-            <path d="m0 0 68 0-22 72-24 0z" />
+          <circle cx="34px" cy="80px" r="14px" />
+          <path d="m0 0 68 0-22 72-24 0z" />
         </g>
-    </svg>
-  </div>
+      </svg>
+    </div>
   </body>
-  <script src="assets\javascript\jquery-library.js"></script>
 </html>
