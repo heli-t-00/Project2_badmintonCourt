@@ -8,23 +8,30 @@
     <style>
       /* Basic styling for body */
       body {
-        justify-content: center;
-        width: 100vw;
-        align-items: center;
-        background-color: black;
-        color: white;
-        margin-top: 100px;
-        margin-left: 100px;
-        margin-right: 100px;
-        margin-bottom: 100px;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  margin: 100px;
+  box-sizing: border-box; /* Ensures padding/margin doesn't exceed the viewport */
+}
+
+.intro {
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+}
+      
 
       /* Court grid styling  used BWF court sizing guidelines for court proportions*/
       .court {
         display: grid;
         grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
         grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
-        /* zoom: 70%; */
         scale: 70%;
         transform-origin: 0 0;
         opacity: 0%; /* makes the court appear/disappear with opacity*/
@@ -80,6 +87,31 @@
       }
 
       /* Media query:  */
+      /* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  body {
+    margin: 20px; /* Reduces large margins on small screens */
+    flex-direction: column; /* Stack content vertically if needed */
+  }
+
+  .intro {
+    padding: 15px;
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Adjust headline size */
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
     </style>
   </head>
   <body>
@@ -262,7 +294,7 @@
     </script>
 
     <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
-    <div class="intro">
+    <div class="intro" style="background-color: blue; ">
       <h1>Badminton Basics</h1>
       <br />
 
