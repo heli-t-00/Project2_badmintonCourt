@@ -241,10 +241,10 @@
             break;
           case 2:
             //Get a valid area by swapping T and B as well as L and R to give the diagonal area
-            let validMid = `${lastMove[0] == "T" ? "B" : "T"}M${
+            validMid = `${lastMove[0] == "T" ? "B" : "T"}M${
               lastMove[2] == "L" ? "R" : "L"
             }1`;
-            let validRear = validMid.replace("M", "R"); //Get the rear area by swapping M for R
+            validRear = validMid.replace("M", "R"); //Get the rear area by swapping M for R
             console.log(`Valid areas are ${validMid} & ${validRear}`);
             checkIfValidMove(
               validMid == el.id || validRear == el.id,
@@ -271,28 +271,6 @@
         setGameText("Select a valid singles starting service area");
         play = 1;
       }
-      // MAKING IT RESPONSIVE - using function instead of media query
-      function fitCourtToScreen(way) {
-        let prect = document.body.getBoundingClientRect();
-        let court = document.getElementsByClassName("court")[0];
-        // if (way == 0) {
-        //   if (!court.classList.contains("flipped"))
-        //     court.classList.add("flipped");
-        // } else if (court.classList.contains("flipped")) {
-        //   court.classList.remove("flipped");
-        // }
-        let crect = court.getBoundingClientRect();
-        // let angle = getRotationAngle(court);
-        // if (angle == 90)
-        //   court.style.zoom = `${
-        //     (prect.width / (crect.top + court.clientHeight + 40)) * 100
-        //   }%`;
-        // else
-        court.style.zoom = `${
-          (prect.height / (crect.top + court.clientHeight + 40)) * 100
-        }%`;
-        //   console.log(`zoom=${court.style.zoom} angle=${angle}`);
-      }
       function showCourt() {
         courtType = document.getElementById("courtType");
         let court = document.getElementsByClassName("court")[0];
@@ -305,7 +283,6 @@
         let shuttle = document.getElementById("shuttle");
         shuttle.style.display = "block";
         displayCourtType();
-        // fitCourtToScreen(true);
       }
       function courtIsSingles() {
         return courtType.innerText == "Singles";
