@@ -31,7 +31,12 @@
         text-align: justify;
         max-width: 500px;
       }
-
+.courtContainer {
+  display: flex;
+  justify-content: center;
+        align-items: center;
+        width: 100vw;
+}
       /* Court grid styling  used BWF court sizing guidelines for court proportions*/
       .court {
       /* TODO make responsive*/
@@ -350,7 +355,7 @@
     <br />
     <!-- nextMove display what happens for next step of the game -->
     <div id="nextMove"></div> 
-    <!-- TODO centre court on screen -->
+    <div class="courtContainer">
     <div class="court">
       <!-- 1st row - line -->
       <div class="line"></div>
@@ -489,6 +494,7 @@
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
+    </div>
     </div>
     <div id="shuttle">
       <svg width="68" height="98" viewBox="0,0,68,98" id="shuttleimage">
