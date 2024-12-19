@@ -181,6 +181,7 @@
       // SERVING
       function serve() {
         if (courtIsSingles()) {
+          // @todo use correct keywords
           fromId = "TML1";
           fromIds = [fromId, fromId.replace("M", "R")];
           toId = "BMR1";
@@ -211,7 +212,6 @@
       function clickOnArea(event, el) {
         if (play > 0) playGame(event, el);
         else setGameText("");
-        setAllAreas("", "green"); /* set whole court to green */
         console.log(`moveOnClick ${event.pageX},${event.pageY}`);
         moveShuttle(event.pageX, event.pageY, 20);
       }
@@ -267,10 +267,17 @@
             play = 0;
         }
       }
+      // test play function, when clicked, it will check what court type is currently displayed, if single court already displayed no change, if double displayed, togglecourttype to single court
+      // court is displayed correctly
       function testPlay() {
         setGameText("Select a valid singles starting service area");
         play = 1;
+        if (!courtIsSingles()) {
+          toggleCourtType();
+        }
+        displayCourtType();
       }
+
       function showCourt() {
         courtType = document.getElementById("courtType");
         let court = document.getElementsByClassName("court")[0];
