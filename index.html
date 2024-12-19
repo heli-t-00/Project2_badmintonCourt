@@ -11,15 +11,18 @@
     <style>
       /* Basic styling for body */
       body {
-        justify-content: center;
-        align-items: center;
         width: 100vw;
         background-color: black;
         color: white;
-        margin: 100px;
+        margin: 0px;
+        padding: 0px;
         box-sizing: border-box; /* Ensures padding/margin doesn't exceed the viewport */
       }
-
+      .page1 {
+        margin: 100px;
+        justify-content: center;
+        align-items: center;
+      }
       .intro {
         background-color: blue;
         padding: 20px;
@@ -34,7 +37,7 @@
         display: grid;
         grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
         grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
-        scale: 70%;
+        scale: 50%;
         transform-origin: 0 0;
         opacity: 0%; /* makes the court appear/disappear with opacity*/
       }
@@ -272,36 +275,37 @@
       function fitCourtToScreen(way) {
         let prect = document.body.getBoundingClientRect();
         let court = document.getElementsByClassName("court")[0];
-        if (way == 0) {
-          if (!court.classList.contains("flipped"))
-            court.classList.add("flipped");
-        } else if (court.classList.contains("flipped")) {
-          court.classList.remove("flipped");
-        }
+        // if (way == 0) {
+        //   if (!court.classList.contains("flipped"))
+        //     court.classList.add("flipped");
+        // } else if (court.classList.contains("flipped")) {
+        //   court.classList.remove("flipped");
+        // }
         let crect = court.getBoundingClientRect();
-        let angle = getRotationAngle(court);
-        if (angle == 90)
-          court.style.zoom = `${
-            (prect.width / (crect.top + court.clientHeight + 40)) * 100
-          }%`;
-        else
-          court.style.zoom = `${
-            (prect.height / (crect.top + court.clientHeight + 40)) * 100
-          }%`;
-        console.log(`zoom=${court.style.zoom} angle=${angle}`);
+        // let angle = getRotationAngle(court);
+        // if (angle == 90)
+        //   court.style.zoom = `${
+        //     (prect.width / (crect.top + court.clientHeight + 40)) * 100
+        //   }%`;
+        // else
+        court.style.zoom = `${
+          (prect.height / (crect.top + court.clientHeight + 40)) * 100
+        }%`;
+        //   console.log(`zoom=${court.style.zoom} angle=${angle}`);
       }
       function showCourt() {
         courtType = document.getElementById("courtType");
         let court = document.getElementsByClassName("court")[0];
         court.style.opacity = "100%";
         court.style.transition = "opacity 5s";
-        let intro = document.getElementsByClassName("intro")[0];
+        let intro = document.getElementsByClassName("page1")[0];
         intro.style.display = "none";
         let bar = document.getElementsByClassName("bar")[0];
         bar.style.display = "flex";
         let shuttle = document.getElementById("shuttle");
         shuttle.style.display = "block";
         displayCourtType();
+        // fitCourtToScreen(true);
       }
       function courtIsSingles() {
         return courtType.innerText == "Singles";
@@ -316,30 +320,31 @@
     </script>
 
     <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
-    <div class="intro" style="background-color: blue">
-      <h1>Badminton Basics</h1>
-      <br />
-
-      <p>
-        The Basic Rules of Badminton:
+    <div class="page1">
+      <div class="intro" style="background-color: blue">
+        <h1>Badminton Basics</h1>
         <br />
-        Playing a sport without knowing the rules limits the ability of play.
-        Learn the basic rules of Badminton before playing helps you enjoy the
-        game from the get go!
-        <br />
-        <a href="https://bwfbadminton.com/" target="_blank"
-          >Badminton World Federation (BWF)</a
-        >
-        lays down the rules.
 
-        <br />
-      </p>
+        <p>
+          The Basic Rules of Badminton:
+          <br />
+          Playing a sport without knowing the rules limits the ability of play.
+          Learn the basic rules of Badminton before playing helps you enjoy the
+          game from the get go!
+          <br />
+          <a href="https://bwfbadminton.com/" target="_blank"
+            >Badminton World Federation (BWF)</a
+          >
+          lays down the rules.
 
-      <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
-      <br />
-      <button onclick="showCourt()" id="btn1">Let's Start!</button>
+          <br />
+        </p>
+
+        <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
+        <br />
+        <button onclick="showCourt()" id="btn1">Let's Start!</button>
+      </div>
     </div>
-    <br />
     <div class="bar">
       <!-- buttons showing valid court areas -->
       <button id="courtType" onClick="toggleCourtType()">Singles</button>
