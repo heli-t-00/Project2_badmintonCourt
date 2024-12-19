@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Badminton Basics</title>
-
-    <style>
+<!-- Goodgle Font type -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
+<style>
       /* Basic styling for body */
       body {
   display: flex;
@@ -22,8 +25,9 @@
   background-color: blue;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
-  max-width: 600px;
+  font-size: medium;
+  text-align: justify;
+  max-width: 500px;
 }
       
 
@@ -273,15 +277,15 @@
         console.log(`zoom=${court.style.zoom} angle=${angle}`);
       }
       function showCourt() {
-            courtType = document.getElementById("courtType");
-            court = document.getElementsByClassName("court")[0];
+            let courtType = document.getElementById("courtType");
+            let court = document.getElementsByClassName("court")[0];
             court.style.opacity = "100%";
             court.style.transition = "opacity 5s";
-            intro = document.getElementsByClassName("intro")[0];
+            let intro = document.getElementsByClassName("intro")[0];
             intro.style.display = "none";
-            bar = document.getElementsByClassName("bar")[0];
+           let bar = document.getElementsByClassName("bar")[0];
             bar.style.display = "flex";
-            shuttle = document.getElementById("shuttle");
+            let shuttle = document.getElementById("shuttle");
             shuttle.style.display = "block";
         }
 
@@ -321,10 +325,11 @@
     <div class="bar">
       <!-- buttons showing valid court areas -->
       <button onClick="showSinglesCourt()">Singles Court</button>
-      <button onClick="showDoublesCourt()">Doubles Court</button>
-      <button onClick="serve('TML1', 'BMR1', ['BMR1', 'BRR1'])">Singles Service</button>
-      <button onClick="serve('TMR1', 'BML1', ['BML1', 'BML2'])">Doubles Service</button>
- <button onclick="testPlay()">Play</button>
+      <br> <button onClick="showDoublesCourt()">Doubles Court</button>
+      <br> <button onClick="serve('TML1', 'BMR1', ['BMR1', 'BRR1'])">Singles Service</button>
+     <br> <button onClick="serve('TMR1', 'BML1', ['BML1', 'BML2'])">Doubles Service</button>
+ <br>
+      <button onclick="testPlay()">Play</button>
     </div>
     <br />
     <div id="nextMove"></div>
