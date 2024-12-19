@@ -176,9 +176,20 @@
       }
 
       // SERVING
-      function serve(fromId, toId, validAreas) {
-        setAllAreas("", "red"); //set whole court to green
-        setAreas(validAreas, "green");
+      function serve() {
+        if (courtIsSingles()) {
+          fromId = "TML1";
+          fromIds = [fromId, fromId.replace("M", "R")];
+          toId = "BMR1";
+          validAreas = ["BMR1", "BRR1"];
+        } else {
+          fromId = "TMR1";
+          fromIds = [fromId, fromId.replace("1", "2")];
+          toId = "BML1";
+          validAreas = ["BML1", "BML2"];
+        }
+        setAreas(validAreas, "green"); //set whole court to green
+        setAreas(fromIds, "orange");
         let fromArea = document.getElementById(fromId);
         let toArea = document.getElementById(toId);
         if (fromArea && toArea) {
@@ -292,18 +303,16 @@
         shuttle.style.display = "block";
         displayCourtType();
       }
- function courtIsSingles(){
-  return courtType.innerText == "Singles";
- }
+      function courtIsSingles() {
+        return courtType.innerText == "Singles";
+      }
       function toggleCourtType() {
-        courtType.innerText=courtIsSingles()? "Doubles": "Singles"
+        courtType.innerText = courtIsSingles() ? "Doubles" : "Singles";
         displayCourtType();
-      
       }
       function displayCourtType() {
-        setAllAreas(courtIsSingles()? '1': '', "blue", "black");
+        setAllAreas(courtIsSingles() ? "1" : "", "blue", "black");
       }
-
     </script>
 
     <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
@@ -334,13 +343,14 @@
     <div class="bar">
       <!-- buttons showing valid court areas -->
       <button id="courtType" onClick="toggleCourtType()">Singles</button>
-      <!-- <button onClick="showDoublesCourt()">Doubles Court</button> -->
-      <button onClick="serve('TML1', 'BMR1', ['BMR1', 'BRR1'])">
+      <button onClick="serve()">Show Serve</button>
+
+      <!-- <button onClick="serve('TML1', 'BMR1', ['BMR1', 'BRR1'])">
         Singles Service
       </button>
       <button onClick="serve('TMR1', 'BML1', ['BML1', 'BML2'])">
         Doubles Service
-      </button>
+      </button> -->
 
       <br />
       <button onclick="testPlay()">Play</button>
