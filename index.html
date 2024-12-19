@@ -201,8 +201,8 @@
           toId = "BMR1";
           validAreas = ["BMR1", "BRR1"];
         }
-        setAreas(validAreas, "green"); //set whole court to green
-        setAreas(fromIds, "orange");
+        setAreas(validAreas, "green"); // set the serve destination area to green
+        setAreas(fromIds, "orange"); // set the serve from area to orange
         let fromArea = document.getElementById(fromId);
         let toArea = document.getElementById(toId);
         if (fromArea && toArea) {
@@ -340,13 +340,10 @@
 
           <br />
         </p>
-        <!-- TODO update description to include what happens next 
- ie. you will see court, buttons to show serve, play simple game and show singles doubles court
- move shuttle around using mouse or finger
-  -->
-        <!-- TODO centre the intro -->
         <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
         <br />
+        <p>You will be shown a badminton court, you can switch between singles and doubles court view. You can also see what a valid service is for both types of play for the displayed court type. You can test your knowledge with a few simple clicks</p>
+        <p>You can click the mouse or tap the screen on the court to move the shuttle</p>
         <button onclick="showCourt()" id="btn1">Let's Start!</button>
       </div>
     </div>
