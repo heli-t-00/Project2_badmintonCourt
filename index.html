@@ -20,6 +20,7 @@
       }
       .page1 {
         margin: 100px;
+        display: flex;
         justify-content: center;
         align-items: center;
       }
@@ -65,6 +66,8 @@
       }
       .bar {
         display: none;
+        justify-content: center;
+        align-items: center;
       }
 
       #shuttle {
@@ -298,7 +301,11 @@
         bar.style.display = "flex";
         let shuttle = document.getElementById("shuttle");
         shuttle.style.display = "block";
-        // TODO place shuttle in centre of court to start
+          let rect = court.getBoundingClientRect();
+          let pX = rect.left + rect.width / 2;
+          let pY = rect.top + rect.height / 2;
+          moveShuttle(pX, pY, 20);
+          // move shuttle to middle of court, dot in the centre
         displayCourtType();
       }
 
