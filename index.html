@@ -34,6 +34,7 @@
 
       /* Court grid styling  used BWF court sizing guidelines for court proportions*/
       .court {
+      /* TODO make responsive*/
         display: grid;
         grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
         grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
@@ -181,7 +182,7 @@
       // SERVING
       function serve() {
         if (courtIsSingles()) {
-          // @todo use correct keywords
+          // TODO use correct keywords
           fromId = "TML1";
           fromIds = [fromId, fromId.replace("M", "R")];
           toId = "BMR1";
@@ -201,7 +202,7 @@
           let toRect = toArea.getBoundingClientRect();
           let pX = fromRect.left + fromRect.width / 2;
           let pY = fromRect.top + fromRect.height / 2;
-          moveShuttle(pX, pY, 20);
+          moveShuttle(pX, pY, 1);
           pX = toRect.left + toRect.width / 2;
           pY = toRect.top + toRect.height / 2;
           delay(1000).then(() => moveShuttle(pX, pY, 20));
@@ -210,7 +211,8 @@
 
       // GAME
       function clickOnArea(event, el) {
-        if (play > 0) playGame(event, el);
+        // el is the element which is the area that was clicked
+        if (play > 0) playGame(event, el); 
         else setGameText("");
         console.log(`moveOnClick ${event.pageX},${event.pageY}`);
         moveShuttle(event.pageX, event.pageY, 20);
@@ -232,12 +234,14 @@
       function playGame(event, el) {
         switch (play) {
           case 1:
+
             checkIfValidMove(
               el.id.indexOf("1") >= 0 && //Element id has a 1 in it so is not a tramline
                 el.id.indexOf("F") < 0, //Element id does not have an F in it so is not a front area
               el.id,
               "Select a valid singles service destination area"
             );
+
             break;
           case 2:
             //Get a valid area by swapping T and B as well as L and R to give the diagonal area
@@ -289,8 +293,10 @@
         bar.style.display = "flex";
         let shuttle = document.getElementById("shuttle");
         shuttle.style.display = "block";
+        // TODO place shuttle in centre of court to start
         displayCourtType();
       }
+
       function courtIsSingles() {
         return courtType.innerText == "Singles";
       }
@@ -323,7 +329,11 @@
 
           <br />
         </p>
-
+<!-- TODO update description to include what happens next 
+ ie. you will see court, buttons to show serve, play simple game and show singles doubles court
+ move shuttle around using mouse or finger
+  -->
+ <!-- TODO centre the intro -->
         <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
         <br />
         <button onclick="showCourt()" id="btn1">Let's Start!</button>
@@ -333,19 +343,14 @@
       <!-- buttons showing valid court areas -->
       <button id="courtType" onClick="toggleCourtType()">Singles</button>
       <button onClick="serve()">Show Serve</button>
-
-      <!-- <button onClick="serve('TML1', 'BMR1', ['BMR1', 'BRR1'])">
-        Singles Service
-      </button>
-      <button onClick="serve('TMR1', 'BML1', ['BML1', 'BML2'])">
-        Doubles Service
-      </button> -->
-
+      <!-- TODO hover information over button -->
       <br />
-      <button onclick="testPlay()">Play</button>
+      <button onclick="testPlay()">Play Singles Game</button>
     </div>
     <br />
-    <div id="nextMove"></div>
+    <!-- nextMove display what happens for next step of the game -->
+    <div id="nextMove"></div> 
+    <!-- TODO centre court on screen -->
     <div class="court">
       <!-- 1st row - line -->
       <div class="line"></div>
