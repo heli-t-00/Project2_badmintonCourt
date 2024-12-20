@@ -1,24 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* Basic styling for body */
 body {
-  justify-content: center;
   width: 100vw;
-  align-items: center;
   background-color: black;
   color: white;
-  margin-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; /* Ensures padding/margin doesn't exceed the viewport */
 }
-
+.page1 {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro {
+  background-color: blue;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: medium;
+  text-align: justify;
+  max-width: 500px;
+}
+.courtContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Court grid styling  used BWF court sizing guidelines for court proportions*/
 .court {
+  background-color: red;
+  /* TODO make responsive*/
   display: grid;
   grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
   grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
-  zoom: 70%;
-  /* rotate: -90deg; */
-  transform-origin: 0 0;
+  transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -webkit-transform-origin: 50% 0;
   opacity: 0%; /* makes the court appear/disappear with opacity*/
 }
 .line {
@@ -37,12 +56,15 @@ body {
   background-color: rgb(195, 19, 231);
   border-color: rgb(195, 19, 231);
 }
-/*  */
 .bar {
   display: none;
-  
+  justify-content: center;
+  align-items: center;
 }
-
+#nextMove {
+  width: 100vw;
+  text-align: center;
+}
 #shuttle {
   position: absolute;
   display: none;
@@ -59,18 +81,29 @@ body {
 a {
   color: red;
 }
-
-/* CSS to display tool tips above the class area divs */
-        .area:hover:after {
-            display: block;
-            position: absolute;
-            z-index: 1;
-            width: fit-content;
-            white-space: nowrap;
-            background-color: darkgray;
-            color: black;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
 /* Media query:  */
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  body {
+    margin: 20px; /* Reduces large margins on small screens */
+    flex-direction: column; /* Stack content vertically if needed */
+  }
+
+  .intro {
+    padding: 15px;
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Adjust headline size */
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
