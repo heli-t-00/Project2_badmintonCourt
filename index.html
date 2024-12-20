@@ -104,8 +104,13 @@
             background: black;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
+            opacity: 80%;
             z-index: 1000;
-        }
+            justify-content: center;
+            text-align: justify;
+            align-items: center;
+            flex-direction: column;
+          }
 
         #popup.hidden {
             display: none;
@@ -223,6 +228,8 @@
 
       // SERVING
       function serve() {
+        setGameText("");
+        play=0;
         // Display the serving rules popup
         showPopup(`
         <h2>Serving Rules</h2>
@@ -373,25 +380,24 @@
       }
       //Function to toggle between Singles and Doubles
       function toggleCourtType() {
-        const button = document.getElementById("courtType");
-        if (button.innerText === "Singles") {
-          button.innerText = "Doubles";
+        setGameText("");
+        play=0;
+        if (courtType.innerText === "Singles") {
+          courtType.innerText = "Doubles";
           showPopup(`
             <h2>Doubles</h2>
             <p>Doubles involves two players per side. The court is wider, and the service rules 
             vary depending on the team score and position.</p>
         `);
         } else {
-          button.innerText = "Singles";
+          courtType.innerText = "Singles";
           showPopup(`
-            <p>In Singles games, the court dimensions are narrower compared to Doubles.
-            <br>"Long and thin" 
-            <br>
-            Players serve diagonally and play within the singles sidelines.</p>
+            <h2>Singles</h2>
+            <p>In Singles, the court dimensions are narrower compared to Doubles. 
+            Players serve diagonally and play within the single sidelines.</p>
         `);
-    
-      }
-    displayCourtType();
+        }
+        displayCourtType();
       }
       function displayCourtType() {
         setAllAreas(courtIsSingles() ? "1" : "", "blue", "black");
@@ -402,7 +408,7 @@
         const popupContent = document.getElementById("popup-content");
 
         popupContent.innerHTML = content; // Set the content of the popup
-        popup.style.display = "block"; // Show the popup
+        popup.style.display = "flex"; // Show the popup
       }
 
       // Function to hide the popup
@@ -410,15 +416,6 @@
         const popup = document.getElementById("popup");
         popup.style.display = "none"; // Hide the popup
       }
-
-     
-
-      // Add event listener for the close button
-      document
-        .getElementById("popup-close")
-        .addEventListener("click", hidePopup);
-    
-
     </script>
 
     <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
@@ -636,7 +633,7 @@
     <!-- Popup Structure -->
     <div id="popup" class="hidden">
         <div id="popup-content"></div>
-        <button id="popup-close">Close</button>
+        <button id="popup-close" onclick="hidePopup()">Close</button>
     </div>  
   </body>
 </html>
