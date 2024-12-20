@@ -14,6 +14,7 @@
         width: 100vw;
         background-color: black;
         color: white;
+        font-family: Arial, Helvetica, sans-serif;
         margin: 0px;
         padding: 0px;
         box-sizing: border-box; /* Ensures padding/margin doesn't exceed the viewport */
@@ -36,16 +37,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100vw;
       }
       /* Court grid styling  used BWF court sizing guidelines for court proportions*/
       .court {
+        background-color: red;
         /* TODO make responsive*/
         display: grid;
         grid-template-rows: 4px 72px 4px 388px 4px 198px 1px 198px 4px 388px 4px 72px 4px;
         grid-template-columns: 4px 42px 4px 253px 4px 253px 4px 42px 4px;
-        scale: 50%;
-        transform-origin: 0 0;
+        transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+        -webkit-transform-origin: 50% 0;
         opacity: 0%; /* makes the court appear/disappear with opacity*/
       }
       .line {
@@ -69,7 +71,10 @@
         justify-content: center;
         align-items: center;
       }
-
+      #nextMove {
+        width: 100vw;
+        text-align: center;
+      }
       #shuttle {
         position: absolute;
         display: none;
@@ -286,6 +291,13 @@
         intro.style.display = "none";
         let bar = document.getElementsByClassName("bar")[0];
         bar.style.display = "flex";
+        // set court scale
+        let courtRect = court.getBoundingClientRect();
+        let scale =
+          (window.innerHeight / (courtRect.top + courtRect.height + 80)) * 100;
+        // setting the scale to the calculated percent against window height
+        court.style.scale = `${scale}%`;
+
         let shuttle = document.getElementById("shuttle");
         shuttle.style.display = "block";
         let rect = court.getBoundingClientRect();
@@ -312,33 +324,51 @@
     <div class="page1">
       <div class="intro" style="background-color: blue">
         <h1>Badminton Basics</h1>
-        <br />
+        <h2>
+          Master the Basics: Badminton Rules Made Simple!</h2>
+          <br />
+          <p>Stepping onto the court without knowing the rules can limit your
+          enjoyment of the game. By mastering the essential rules of badminton,
+          you'll unlock the full excitement and strategy of every match, right
+          from the start!
 
-        <p>
-          The Basic Rules of Badminton:
-          <br />
-          Playing a sport without knowing the rules limits the ability of play.
-          Learn the basic rules of Badminton before playing helps you enjoy the
-          game from the get go!
-          <br />
-          <a href="https://bwfbadminton.com/" target="_blank"
-            >Badminton World Federation (BWF)</a
-          >
-          lays down the rules.
-
-          <br />
-        </p>
-        <p>Ready to Learn the rules of Badminton? Let’s dive in!</p>
-        <br />
-        <p>
-          You will be shown a badminton court, you can switch between singles
-          and doubles court view. You can also see what a valid service is for
-          both types of play for the displayed court type. You can test your
-          knowledge with a few simple clicks
+        
+          The <a href="https://bwfbadminton.com/" target="_blank"
+            >Badminton World Federation (BWF)</a>
+          establishes the official rules, ensuring fair play and consistency
+          worldwide.
+              </p>
+        <h3>Ready to Level Up Your Game? Let’s Get Started!</h3>
+                <p>
+          Dive into an immersive experience designed to teach you the
+          fundamentals of badminton like never before:
         </p>
         <p>
-          You can click the mouse or tap the screen on the court to move the
-          shuttle
+          <ul>
+          <li>Explore the Court: Get a comprehensive view of a badminton court with
+          an intuitive layout. Switch effortlessly between singles and doubles
+          court views to see how the boundaries and playing areas differ.
+          </li>
+          <li>Understand Serving Rules: Learn the specific rules for valid serves in
+          both singles and doubles play. See exactly where to serve from and
+          where the shuttle must land, depending on the court type you’ve
+          selected.</li>
+          <li> Interactive Learning: Put your knowledge to the test with
+          interactive features. Use your mouse or tap your screen to move the
+          shuttle across the court and identify correct serving zones, boundary
+          lines, and scoring rules.
+          </li>
+          <li>Quick Quizzes: Challenge yourself with fun
+          and simple quizzes designed to solidify your understanding of the
+          rules in an engaging way. 
+          </li> 
+          </ul>
+        <br>
+        Whether you're a beginner or brushing up on
+          your skills, this interactive guide ensures you’re equipped with the
+          knowledge to play confidently and enjoy the game to the fullest. Let’s
+          make learning badminton rules fun and engaging!
+          
         </p>
         <button onclick="showCourt()" id="btn1">Let's Start!</button>
       </div>
@@ -351,9 +381,8 @@
       <br />
       <button onclick="testPlay()">Play Singles Game</button>
     </div>
-    <br />
-    <!-- nextMove display what happens for next step of the game -->
     <div id="nextMove"></div>
+    <!-- nextMove display what happens for next step of the game -->
     <div class="courtContainer">
       <div class="court">
         <!-- 1st row - line -->
