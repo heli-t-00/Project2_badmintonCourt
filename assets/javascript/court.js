@@ -57,6 +57,14 @@
 
       // SERVING
       function serve() {
+        setGameText("");
+        play = 0;
+        // Display the serving rules popup
+        showPopup(`
+        <h2>Serving Rules</h2>
+        <p>To serve correctly, stand within the serving area and aim diagonally across 
+        the net into the opponent's serving zone. The shuttle must not touch the net.</p>
+    `);
         // setting up for double serve
         let fromId = "TMR1";
         let fromIds = [fromId, fromId.replace("1", "2")];
@@ -71,14 +79,18 @@
         }
         setAreas(validAreas, "green"); // set the serve destination area to green
         setAreas(fromIds, "orange"); // set the serve from area to orange
+        // Get the serve areas by their IDs ************
         let fromArea = document.getElementById(fromId);
         let toArea = document.getElementById(toId);
         if (fromArea && toArea) {
+          // Get the center points of the areas********************
           let fromRect = fromArea.getBoundingClientRect();
           let toRect = toArea.getBoundingClientRect();
           let pX = fromRect.left + fromRect.width / 2;
           let pY = fromRect.top + fromRect.height / 2;
+          // Move the shuttle from the serve area**************************
           moveShuttle(pX, pY, 1);
+          // Delay and then move the shuttle to the target area***************************
           pX = toRect.left + toRect.width / 2;
           pY = toRect.top + toRect.height / 2;
           delay(1000).then(() => moveShuttle(pX, pY, 20));
@@ -151,6 +163,13 @@
       // test play function, when clicked, it will check what court type is currently displayed, if single court already displayed no change, if double displayed, togglecourttype to single court
       // court is displayed correctly
       function testPlay() {
+        // Popup display rules first*************************
+        showPopup(`
+        <h2>Play Singles Game</h2>
+        <p>Get ready to play a singles game! Focus on your movement, positioning, 
+        and strategy to outsmart your opponent.</p>
+    `);
+        // Delay and then move the shuttle to the target area***************************
         setGameText("Select a valid singles starting service area");
         play = 1;
         if (!courtIsSingles()) {
@@ -188,11 +207,43 @@
       function courtIsSingles() {
         return courtType.innerText == "Singles";
       }
+
+      //Function to toggle between Singles and Doubles
       function toggleCourtType() {
-        courtType.innerText = courtIsSingles() ? "Doubles" : "Singles";
+        setGameText("");
+        play=0;
+        if (courtType.innerText === "Singles") {
+          courtType.innerText = "Doubles";
+          showPopup(`
+            <h2>Doubles</h2>
+            <p>Doubles involves two players per side. The court is wider, and the service rules 
+            vary depending on the team score and position.</p>
+        `);
+        } else {
+          courtType.innerText = "Singles";
+          showPopup(`
+            <h2>Singles</h2>
+            <p>In Singles, the court dimensions are narrower compared to Doubles. 
+            Players serve diagonally and play within the single sidelines.</p>
+        `);
+        }
         displayCourtType();
       }
       function displayCourtType() {
         setAllAreas(courtIsSingles() ? "1" : "", "blue", "black");
+      }
+      // Function to show the popup with specific content
+      function showPopup(content) {
+        const popup = document.getElementById("popup");
+        const popupContent = document.getElementById("popup-content");
+
+        popupContent.innerHTML = content; // Set the content of the popup
+        popup.style.display = "flex"; // Show the popup
+      }
+
+      // Function to hide the popup
+      function hidePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display = "none"; // Hide the popup
       }
     
