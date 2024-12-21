@@ -115,7 +115,7 @@
           play += 1;
           setGameText(successText);
         } else {
-          setGameText("You lost the game!");
+          setGameText("Try again!");
           play = 0;
         }
       }
@@ -128,7 +128,7 @@
               el.id.indexOf("1") >= 0 && //Element id has a 1 in it so is not a tramline
                 el.id.indexOf("F") < 0, //Element id does not have an F in it so is not a front area
               el.id,
-              "Select a valid singles service destination area"
+              "Select a valid Singles service destination area"
             );
 
             break;
@@ -142,7 +142,7 @@
             checkIfValidMove(
               validMid == el.id || validRear == el.id,
               el.id,
-              "Select a valid singles rear court return destination area"
+              "Select a valid Singles Rear court return destination area"
             );
             break;
           case 3:
@@ -151,7 +151,7 @@
             checkIfValidMove(
               validMid == el.id || validRear == el.id,
               el.id,
-              "Yay, you won the game!"
+              "Yay, you won a point!"
             );
             lastMove = "";
             play = 0;
@@ -166,11 +166,10 @@
         // Popup display rules first*************************
         showPopup(`
         <h2>Play Singles Game</h2>
-        <p>Get ready to play a singles game! Focus on your movement, positioning, 
-        and strategy to outsmart your opponent.</p>
+        <p>Get ready to test your knowlege of a Singles game!.</p>
     `);
         // Delay and then move the shuttle to the target area***************************
-        setGameText("Select a valid singles starting service area");
+        setGameText("Select a valid Singles starting service area");
         play = 1;
         if (!courtIsSingles()) {
           toggleCourtType();
