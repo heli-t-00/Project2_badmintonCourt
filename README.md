@@ -64,7 +64,7 @@ To ensure all features work as intended. The following test was performed
 
 ### Responsive
 
-The website is [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli-t-00.github.io/Project2_badmintonCourt/)
+The website used [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli-t-00.github.io/Project2_badmintonCourt/)
 
 <img src="assets/images/amiresponsive_p3.PNG">
 
