@@ -62,8 +62,8 @@
         // Display the serving rules popup
         showPopup(`
         <h2>Serving Rules</h2>
-        <p>To serve correctly, stand within the serving area and aim diagonally across 
-        the net into the opponent's serving zone. The shuttle must not touch the net.</p>
+        <p>To serve correctly, stand within the serving area (orange) and aim diagonally across 
+        the net into the opponent's serving zone (green). <br> The server and receiver must be stationary during the service action</p>
     `);
         // setting up for double serve
         let fromId = "TMR1";
@@ -216,14 +216,15 @@
           courtType.innerText = "Doubles";
           showPopup(`
             <h2>Doubles</h2>
-            <p>Doubles involves two players per side. The court is wider, and the service rules 
-            vary depending on the team score and position.</p>
+            <p>Doubles involves two players per side. The full court is in play during the games, apart from when a serve is taken.<br>
+            During a Serve, the zone you serve to is "Short and Fat".</p>
         `);
         } else {
           courtType.innerText = "Singles";
           showPopup(`
             <h2>Singles</h2>
-            <p>In Singles, the court dimensions are narrower compared to Doubles. 
+            <p>In Singles, the court dimensions are narrower compared to Doubles.<br>
+            "Long and Thin" 
             Players serve diagonally and play within the single sidelines.</p>
         `);
         }

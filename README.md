@@ -55,7 +55,7 @@ This project will demonstrate my ability to integrate technical knowledge with d
 # WireFrame
 When designing the website, my focus was on creating an intuitive experience. I want the users to immediately understand the purpose of the page, even if they arrived via a quick Google search. The wireframe was crafted with a mobile-first approach, ensuring a seamless user experience across devices. The webpage will carry the same header and logo and theme of the first project to ensure it is a seemly transition to the court.html page.
 
-<img src="assets/images/wireframe_mobile.jpg" alt="wireframe mobile/laptop view">
+<img src="assets/images/wireframe_p2.pdf" alt="wireframe mobile/laptop view">
 <img src="assets/images/wireframe_2pg.jpg" alt="idea 1">
 <img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
 
@@ -84,6 +84,7 @@ checked accessibility using Lighthouse tool on Google Dev tools.
 
 HTML
 No errors were returned when passing through the official [W3C Nu HTML Checker](https://validator.w3.org/nu/).
+<img src="" alt="results validation test">
 
 CSS
 No errors were found when passing through the official validator - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator). The document validates as CSS level 3 + SVG.
@@ -109,4 +110,4 @@ https://webdesign.tutsplus.com/svg-viewport-and-viewbox-for-beginners--cms-30844
 * Shuttle shape button - https://travishorn.com/buttons-with-custom-shapes-cabdcde7dfd1
 * Shuttle sizing guide / measurements - https://www.dimensions.com/element/badminton-shuttlecock#:~:text=Badminton%20Shuttlecocks%20have%20a%20head,the%20height%20of%20the%20head
 
-* jQuery Library, open source (uncompressed) - https://jquery.com/download/ 
+* Code Reviewer: M.P (Friend who has not given permission to share his fullname)

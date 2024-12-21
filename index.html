@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Badminton Basics</title>
+    <link rel="stylesheet" href="assets/css/court.css"
     <!-- Goodgle Font type -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
-    <style>
+    <!-- <style>
       /* Basic styling for body */
       body {
         width: 100vw;
@@ -165,10 +166,11 @@
           padding: 10px 20px;
         }
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <script>
+    <script src="assets/javascript/court.js"></script>
+    <!-- <script>
             var play = 0; //Current level of game
       var lastMove = ""; //Last area shuttle was placed in
       let courtType = null;
@@ -416,7 +418,7 @@
         const popup = document.getElementById("popup");
         popup.style.display = "none"; // Hide the popup
       }
-    </script>
+    </script> -->
 
     <!-- Intro page that appears before the court - update with information on info and instructions or rules -->
     <div class="page1">
@@ -424,50 +426,41 @@
         <h1>Badminton Basics</h1>
         <h2>
           Master the Basics: Badminton Rules Made Simple!</h2>
-          <br />
+          
           <p>Stepping onto the court without knowing the rules can limit your
           enjoyment of the game. By mastering the essential rules of badminton,
           you'll unlock the full excitement and strategy of every match, right
           from the start!
 
         
-          The <a href="https://bwfbadminton.com/" target="_blank"
-            >Badminton World Federation (BWF)</a>
+          The <strong><a href="https://bwfbadminton.com/" target="_blank"
+            >Badminton World Federation (BWF)</a></strong>
           establishes the official rules, ensuring fair play and consistency
           worldwide.
               </p>
-        <h3>Ready to Level Up Your Game? Let’s Get Started!</h3>
-                <p>
+         <p>
           Dive into an immersive experience designed to teach you the
           fundamentals of badminton like never before:
         </p>
         <p>
           <ul>
-          <li>Explore the Court: Get a comprehensive view of a badminton court with
+          <li><strong>Explore the Court:</strong> Get a comprehensive view of a badminton court with
           an intuitive layout. Switch effortlessly between singles and doubles
           court views to see how the boundaries and playing areas differ.
           </li>
-          <li>Understand Serving Rules: Learn the specific rules for valid serves in
+          <li><strong>Understand Serving Rules:</strong> Learn the specific rules for valid serves in
           both singles and doubles play. See exactly where to serve from and
           where the shuttle must land, depending on the court type you’ve
           selected.</li>
-          <li> Interactive Learning: Put your knowledge to the test with
+          <li><strong>Interactive Learning:</strong> Put your knowledge to the test with
           interactive features. Use your mouse or tap your screen to move the
           shuttle across the court and identify correct serving zones, boundary
           lines, and scoring rules.
           </li>
-          <li>Quick Quizzes: Challenge yourself with fun
-          and simple quizzes designed to solidify your understanding of the
-          rules in an engaging way. 
-          </li> 
-          </ul>
-        <br>
-        Whether you're a beginner or brushing up on
-          your skills, this interactive guide ensures you’re equipped with the
-          knowledge to play confidently and enjoy the game to the fullest. Let’s
-          make learning badminton rules fun and engaging!
           
-        </p>
+          </ul>
+          </p>
+                 <h3>Ready to Level Up Your Game? Let’s Get Started!</h3>
         <button onclick="showCourt()" id="btn1">Let's Start!</button>
       </div>
     </div>
@@ -475,10 +468,10 @@
       <!-- buttons showing valid court areas -->
       <button id="courtType" onClick="toggleCourtType()">Singles</button>
       <button onClick="serve()">Show Serve</button>
-      <!-- TODO hover information over button -->
-      <br />
+       <br>
       <button onclick="testPlay()">Play Singles Game</button>
     </div>
+    <br>
     <div id="nextMove"></div>
     <!-- nextMove display what happens for next step of the game -->
     <div class="courtContainer">
