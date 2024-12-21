@@ -63,47 +63,74 @@ When designing the website, my focus was on creating an intuitive experience. I 
 ### Design
 The website’s design prioritised on simplicity and intuitiveness, reflecting my goal to create a seamless and engaging user experience. Guided by core UX design principles, I focused on building an interactive front-end web application that is accessible, responsive, and user-friendly:
 
-User-Centered Design: 
+- User-Centered Design: 
 The website is tailored to the needs and behaviors of its target audience, ensuring that every feature and interaction aligns with user expectations. 
-Clarity and Consistency: 
+- Clarity and Consistency: 
 The layout is clean and organized, with readable typography, intuitive navigation, and a uniform style. This consistency helps users quickly recognize patterns and feel confident in their interactions.
-Accessibility: 
+- Accessibility: 
 Every element of the site is designed to be inclusive, meeting accessibility standards. Features such as descriptive alt text for images, high-contrast color schemes, and keyboard navigability ensure the website is usable for people of all abilities. The website responds to touch / mouse / keyboard events.
-Responsiveness: 
-An attempt has been made to allow the website to be responsive. 
-Feedback and Usability: 
+- Responsiveness: The design aims adapts seamlessly to different screen sizes and devices, maintaining functionality and visual appeal whether accessed on mobile, tablet, or desktop.
+- Feedback and Usability: 
 Interactive elements provide immediate feedback, such as hover effects and form submission confirmations, ensuring users understand the outcomes of their actions. Usability testing further refined the design, eliminating pain points to enhance the overall experience.
-Simplicity and Findability: 
+- Simplicity and Findability: 
 By eliminating unnecessary complexity, the website highlights essential features and makes navigation straightforward. Clear categorization and search functionality help users easily locate the information they need.
 This deliberate approach to design ensured that the website not only met its primary objective of interactivity but also delivered an intuitive, inclusive, and aesthetically pleasing experience grounded in UX best practices.
+
+### Features and Responsitivity
+Features Breakdown
+1. Interactive Badminton Court
+- Shuttle can move within the Court Areas
+- Used clear color-coding to differentiate between service zones, valid play areas, and out-of-bound zones.
+2. Animation for Service Zones
+- Highlight the service zones using a fading-in/out effect or directional arrows for better visualization.
+- Incorporate animations that display the transition of zones during singles and doubles matches.
+
+#### User Stories Implementation
+- Single Court Player
+Add overlays for valid play and service areas specific to a singles game.
+Use toggle switches to allow users to switch between "Singles" and "Doubles" views.
+
+- Double Court Players
+Expand the service area animations to show how they differ for doubles.
+
+- Additional Features
+Tests for Learning Outcomes: for Singles play only.
+Interactive Quiz for Service Area Identification:
+Display multiple court zones and ask users to click the correct service area based on specific scenarios.
+Provide immediate feedback (correct/incorrect).
+Test for Valid Play Areas:
+Present an empty court where users can mark areas they believe are valid play zones.
+Include a “Check Answer” button to show correct areas with explanations.
 
 ### Testing
 To ensure all features work as intended. The following test was performed
 
-### Responsive
+#### Responsive
 The website used [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli-t-00.github.io/Project2_badmintonCourt/)
 <img src="assets/images/amiresponsive_p3.PNG">
 
-### Browser Friendly
+#### Browser Friendly
 The site has been tested for the following browsers: Chrome, Firefox, Edge, Vivaldi, Brave, and Tor Browser.
 
 Checked use this [Browserling.com]
 <img src="assets/images/Browser_friendly.PNG">
 
-### Accessible
+#### Accessible
 Checked accessibility using Lighthouse tool on Google Dev tools.
 <img src="assets/images/lighthousetest1.PNG">
 <img src="assets/images/lighthousetest2.PNG">
 
-### Validator Testing
-#### HTML
+#### Validator Testing
+##### HTML & CSS & JavaScript
 No errors were returned when passing through the official [W3C Nu HTML Checker](https://validator.w3.org/nu/).
 <img src="assets/images/html_validator.PNG" alt="results validation test">
-#### CSS
+
 No errors were found when passing through the official validator - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator). The document validates as CSS level 3 + SVG.
 <img src="assets/images/css_validator.PNG">
 <img src="assets/images/cssValidatorWarnings.PNG">
 There were warnings, which has been checked and resolved."vendor extesnion" means that the property is specific to a particular browser engine.
+
+For JavaScript I installed SonarQube for IDE to check and validate the javascript code. 
 
 ### GitHub and Deployment
 I have used GitHub to deploy the website. [Live Link](https://heli-t-00.github.io/Project2_badmintonCourt/)
@@ -114,12 +141,13 @@ Maximised future maintainability through clear documentation (this readme file) 
 ### Future Improvements
 Here are future feature ideas to further improvements on this project:
 
-- Enhanced Content: Expand on badminton rules to make the site a comprehensive learning resource.
+- Enhanced Content: Expand on badminton rules to make the site a comprehensive learning resource - 
 - Responsive Design: Ensure layouts adapt seamlessly for mobile users.
 - Interactive Features: Add animations, quizzes, and labeled court areas for better understanding.
 - Visual Clarity: Use high-contrast colors and larger fonts for improved readability.
 - Gamification: Implement levels or rewards to keep learners engaged.
 - Accessibility: Support keyboard navigation and screen readers to make the site inclusive.
+- Clickable Court Areas: Create hover effects on specific court zones with tooltips or pop-ups explaining their rules.
 
 ### Credits
 The following links and websites were used to asisst with my development of the code and content of the website.
