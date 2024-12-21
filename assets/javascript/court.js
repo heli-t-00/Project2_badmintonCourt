@@ -115,7 +115,7 @@
           play += 1;
           setGameText(successText);
         } else {
-          setGameText("Try again!");
+          setGameText("Try again! Click Play");
           play = 0;
         }
       }
