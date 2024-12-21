@@ -21,6 +21,7 @@ This project aligns with the EPIC (Easily-Accessible, Purposeful, Interactive, a
 The primary goal is to display the rules of the game interactively, focusing on accessibility and responsivity. The application will ensure compatibility across devices by designing with a mobile-first approach. Leveraging CSS, I will implement CSS grids to construct the badminton court, ensuring scalability for various screen sizes.
 
 # Desired Outcome
+###### [Back to the top](#table-of-contents)
 The interactive badminton court will allow users to:
 
 - Identify specific areas of the court such as play zones or service areas.
@@ -54,6 +55,7 @@ This project intends to satisfy the following objectives:
 This project will demonstrate my ability to integrate technical knowledge with design principles to create an accessible and responsive web application.
 
 # WireFrame
+###### [Back to the top](#table-of-contents)
 When designing the website, my focus was on creating an intuitive experience. I want the users to immediately understand the purpose of the page, even if they arrived via a quick Google search. The wireframe was crafted with a mobile-first approach, ensuring a seamless user experience across devices. The webpage will carry the same header and logo and theme of the first project to ensure it is a seemly transition to the court.html page.
 
 <img src="assets/images/wireframe_basic.PNG" alt="wireframe mobile/laptop view">
@@ -78,6 +80,7 @@ This deliberate approach to design ensured that the website not only met its pri
 
 # Features and Responsitivity
 ## Features Breakdown
+###### [Back to the top](#table-of-contents)
 1. Interactive Badminton Court
 - Shuttle can move within the Court Areas
 - Used clear color-coding to differentiate between service zones, valid play areas, and out-of-bound zones.
@@ -107,6 +110,7 @@ Present an empty court where users can mark areas they believe are valid play zo
 Include a “Check Answer” button to show correct areas with explanations.
 
 # Testing
+###### [Back to the top](#table-of-contents)
 To ensure all features work as intended. The following test was performed
 
 ## Responsive
@@ -141,6 +145,13 @@ Used this to test the quality of the website. Providing a comprehensive audit of
 <img src="assets/images/lighthousetest2.PNG">
 
 # GitHub and Deployment
+###### [Back to the top](#table-of-contents)
+The site was deployed to GitHub pages. 
+The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+From the source section drop-down menu, select the Master Branch
+Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
 I have used GitHub to deploy the website. [Live Link](https://heli-t-00.github.io/Project2_badmintonCourt/)
 Visual Studio Code editor from Microsoft to write the codes and linked to GitHub for deployment. 
 Deploy the web application to a cloud platform for public access via [github](https://github.com/heli-t-00/Project2_badmintonCourt)
@@ -158,6 +169,7 @@ Here are future feature ideas to further improvements on this project:
 - Clickable Court Areas: Create hover effects on specific court zones with tooltips or pop-ups explaining their rules.
 
 # Credits
+###### [Back to the top](#table-of-contents)
 The following links and websites were used to asisst with my development of the code and content of the website.
 Code Institute bootcamp materials, ChatGPT, W3 Schools was used as part of research to learn the concept of for loop, if/else statements, switch, functions.
 * [W3 Schools](https://www.w3schools.com/)
@@ -176,8 +188,10 @@ https://webdesign.tutsplus.com/svg-viewport-and-viewbox-for-beginners--cms-30844
 
 * Code Reviewer: M.P (Friend who has not given permission to share his fullname)
 
-Basic badminton information selected from:
+Content: Basic badminton
 * Badminton players and playing area: Playing area https://www.bbc.co.uk/bitesize/guides/z37j2p3/revision/2 
 * Badminton court size & Layout guide: https://www.networldsports.co.uk/buyers-guides/badminton-court-guide 
 * The badminton bible https://www.badmintonbible.com/rules/simple 
 * Badminton Racket Review https://badminton-racket-review.com/blogs/news/the-basic-rules-of-badminton-a-complete-guide?srsltid=AfmBOoo5r_TSvwWOotnKWtKx1qUooksrATSlBHoDRASuwph3uQUF1xMg 
+
+###### [Back to the top](#table-of-contents)
