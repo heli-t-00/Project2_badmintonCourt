@@ -63,6 +63,7 @@ When designing the website, my focus was on creating an intuitive experience. I 
 <img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
 
 # Design
+###### [Back to the top](#table-of-contents)
 The website’s design prioritised on simplicity and intuitiveness, reflecting my goal to create a seamless and engaging user experience. Guided by core UX design principles, I focused on building an interactive front-end web application that is accessible, responsive, and user-friendly:
 
 - User-Centered Design: 
@@ -91,6 +92,9 @@ This deliberate approach to design ensured that the website not only met its pri
 - Incorporate animations that display the transition of zones during singles and doubles matches.
 <img src="assets/images/SingleServingRules.PNG">
 <img src="assets/images/DoublesServingRules.PNG">
+
+###### [Back to the top](#table-of-contents)
+
 ## User Stories Implementation
 - Single Court Player
 Add overlays for valid play and service areas specific to a singles game.
@@ -103,7 +107,7 @@ Expand the service area animations to show how they differ for doubles.
 Tests for Learning Outcomes: for Singles play only.
 Interactive Quiz for Service Area Identification:
 Display multiple court zones and ask users to click the correct service area based on specific scenarios.
-Provide immediate feedback (correct/incorrect).
+- Provide immediate feedback (correct/incorrect).
 <img src="assets/images/PlaySingles.PNG">
 Test for Valid Play Areas:
 Present an empty court where users can mark areas they believe are valid play zones.
@@ -112,7 +116,6 @@ Include a “Check Answer” button to show correct areas with explanations.
 # Testing
 ###### [Back to the top](#table-of-contents)
 To ensure all features work as intended. The following test was performed
-
 ## Responsive
 The website used [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli-t-00.github.io/Project2_badmintonCourt/)
 <img src="assets/images/amiresponsive_p3.PNG">
