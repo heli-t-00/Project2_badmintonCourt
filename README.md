@@ -122,11 +122,11 @@ The website used [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli
 
 ## Browser Friendly
 The site has been tested for the following browsers: Chrome, Firefox, Edge, Vivaldi, Brave, and Tor Browser.
-Checked use this [Browserling.com]
+Checked use this [Browserling.com](https://www.browserling.com/browse/win10/tor13.5/https://heli-t-00.github.io/Project2_badmintonCourt/)
 <img src="assets/images/Browser_friendly.PNG">
 
-## Accessible
-Checked accessibility using Lighthouse tool on Google Dev tools.
+## Accessible - Lighthouse test 
+Used this to test the quality of the website. Providing a comprehensive audit of the website's performances, accessibility, SEO (Search Engine Optimisation), best practices, and Progressive Web App (PWA) capabilities. 
 <img src="assets/images/lighthousetest1.PNG">
 <img src="assets/images/lighthousetest2.PNG">
 
@@ -141,11 +141,6 @@ No errors were found when passing through the official validator - [W3C CSS Vali
 There were warnings, which has been checked and resolved."vendor extesnion" means that the property is specific to a particular browser engine.
 
 For JavaScript I installed SonarQube for IDE to check and validate the javascript code. 
-
-## Lighthouse test 
-Used this to test the quality of the website. Providing a comprehensive audit of the website's performances, accessibility, SEO (Search Engine Optimisation), best practices, and Progressive Web App (PWA) capabilities. 
-<img src="assets/images/lighthousetest1.PNG">
-<img src="assets/images/lighthousetest2.PNG">
 
 # GitHub and Deployment
 ###### [Back to the top](#table-of-contents)
