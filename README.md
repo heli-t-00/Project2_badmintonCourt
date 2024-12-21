@@ -56,11 +56,11 @@ This project will demonstrate my ability to integrate technical knowledge with d
 # WireFrame
 When designing the website, my focus was on creating an intuitive experience. I want the users to immediately understand the purpose of the page, even if they arrived via a quick Google search. The wireframe was crafted with a mobile-first approach, ensuring a seamless user experience across devices. The webpage will carry the same header and logo and theme of the first project to ensure it is a seemly transition to the court.html page.
 
-<img src="assets/images/wireframe_p2.pdf" alt="wireframe mobile/laptop view">
+<img src="assets/images/wireframe_basic.PNG" alt="wireframe mobile/laptop view">
 <img src="assets/images/wireframe_2pg.jpg" alt="idea 1">
 <img src="assets/images/wireframe_1pg.jpg" alt="idea 2">
 
-### Design
+# Design
 The website’s design prioritised on simplicity and intuitiveness, reflecting my goal to create a seamless and engaging user experience. Guided by core UX design principles, I focused on building an interactive front-end web application that is accessible, responsive, and user-friendly:
 
 - User-Centered Design: 
@@ -76,16 +76,19 @@ Interactive elements provide immediate feedback, such as hover effects and form 
 By eliminating unnecessary complexity, the website highlights essential features and makes navigation straightforward. Clear categorization and search functionality help users easily locate the information they need.
 This deliberate approach to design ensured that the website not only met its primary objective of interactivity but also delivered an intuitive, inclusive, and aesthetically pleasing experience grounded in UX best practices.
 
-### Features and Responsitivity
-Features Breakdown
+# Features and Responsitivity
+## Features Breakdown
 1. Interactive Badminton Court
 - Shuttle can move within the Court Areas
 - Used clear color-coding to differentiate between service zones, valid play areas, and out-of-bound zones.
+<img src="assets/images/SinglesCourt.PNG">
+<img src="assets/images/DoublesCourt.PNG">
 2. Animation for Service Zones
 - Highlight the service zones using a fading-in/out effect or directional arrows for better visualization.
 - Incorporate animations that display the transition of zones during singles and doubles matches.
-
-#### User Stories Implementation
+<img src="assets/images/SingleServingRules.PNG">
+<img src="assets/images/DoublesServingRules.PNG">
+## User Stories Implementation
 - Single Court Player
 Add overlays for valid play and service areas specific to a singles game.
 Use toggle switches to allow users to switch between "Singles" and "Doubles" views.
@@ -98,30 +101,30 @@ Tests for Learning Outcomes: for Singles play only.
 Interactive Quiz for Service Area Identification:
 Display multiple court zones and ask users to click the correct service area based on specific scenarios.
 Provide immediate feedback (correct/incorrect).
+<img src="assets/images/PlaySingles.PNG">
 Test for Valid Play Areas:
 Present an empty court where users can mark areas they believe are valid play zones.
 Include a “Check Answer” button to show correct areas with explanations.
 
-### Testing
+# Testing
 To ensure all features work as intended. The following test was performed
 
-#### Responsive
+## Responsive
 The website used [Am I Responsive](https://ui.dev/amiresponsive?url=https://heli-t-00.github.io/Project2_badmintonCourt/)
 <img src="assets/images/amiresponsive_p3.PNG">
 
-#### Browser Friendly
+## Browser Friendly
 The site has been tested for the following browsers: Chrome, Firefox, Edge, Vivaldi, Brave, and Tor Browser.
-
 Checked use this [Browserling.com]
 <img src="assets/images/Browser_friendly.PNG">
 
-#### Accessible
+## Accessible
 Checked accessibility using Lighthouse tool on Google Dev tools.
 <img src="assets/images/lighthousetest1.PNG">
 <img src="assets/images/lighthousetest2.PNG">
 
-#### Validator Testing
-##### HTML & CSS & JavaScript
+## Validator Testing
+### HTML & CSS & JavaScript
 No errors were returned when passing through the official [W3C Nu HTML Checker](https://validator.w3.org/nu/).
 <img src="assets/images/html_validator.PNG" alt="results validation test">
 
@@ -132,13 +135,18 @@ There were warnings, which has been checked and resolved."vendor extesnion" mean
 
 For JavaScript I installed SonarQube for IDE to check and validate the javascript code. 
 
-### GitHub and Deployment
+## Lighthouse test 
+Used this to test the quality of the website. Providing a comprehensive audit of the website's performances, accessibility, SEO (Search Engine Optimisation), best practices, and Progressive Web App (PWA) capabilities. 
+<img src="assets/images/lighthousetest1.PNG">
+<img src="assets/images/lighthousetest2.PNG">
+
+# GitHub and Deployment
 I have used GitHub to deploy the website. [Live Link](https://heli-t-00.github.io/Project2_badmintonCourt/)
 Visual Studio Code editor from Microsoft to write the codes and linked to GitHub for deployment. 
 Deploy the web application to a cloud platform for public access via [github](https://github.com/heli-t-00/Project2_badmintonCourt)
 Maximised future maintainability through clear documentation (this readme file) and organised code structure, the three tech stack used, html, css and javascript has their own files and each has clear comments to allow future maintainability.
 
-### Future Improvements
+# Future Improvements
 Here are future feature ideas to further improvements on this project:
 
 - Enhanced Content: Expand on badminton rules to make the site a comprehensive learning resource - 
@@ -149,7 +157,7 @@ Here are future feature ideas to further improvements on this project:
 - Accessibility: Support keyboard navigation and screen readers to make the site inclusive.
 - Clickable Court Areas: Create hover effects on specific court zones with tooltips or pop-ups explaining their rules.
 
-### Credits
+# Credits
 The following links and websites were used to asisst with my development of the code and content of the website.
 Code Institute bootcamp materials, ChatGPT, W3 Schools was used as part of research to learn the concept of for loop, if/else statements, switch, functions.
 * [W3 Schools](https://www.w3schools.com/)
