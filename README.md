@@ -10,7 +10,7 @@ Check out the deployed Badminton Basics (https://heli-t-00.github.io/Project2_ba
 ### 6. [Features and Responsitivity](#features-and-responsitivity)
 ### 7. [Testing](#testing)
 ### 8. [GitHub Deployment](#github-deployment)
-### 9. [Future Improvements](#future-improvemnts)
+### 9. [Future Improvements](#future-improvements)
 ### 10.[Credits](#credits)
 
 # Introduction 
